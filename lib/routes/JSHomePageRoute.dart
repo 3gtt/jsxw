@@ -27,7 +27,7 @@ class JSHomePageRoute extends StatelessWidget {
       title: '111',
       initialRoute: '/',
       theme: const CupertinoThemeData(
-       primaryColor :  Colors.red
+       primaryColor :  Colors.blue
       ),
       routes: {
         '/': (context) => const JSHomePage()

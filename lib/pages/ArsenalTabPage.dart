@@ -4,6 +4,7 @@ import 'package:com_3gtt_jsxw/r.g.dart';
 import 'package:flutter/material.dart';
 import 'package:com_3gtt_jsxw/model/arsenal_model.dart';
 import 'package:com_3gtt_jsxw/widgets/HeaderGridView.dart';
+import 'package:com_3gtt_jsxw/widgets/HorizontalFullImageWidget.dart';
 
 class ArsenalTabPage extends StatefulWidget {
   const ArsenalTabPage({Key? key}) : super(key: key);
@@ -46,34 +47,59 @@ class _ArsenalWidgetState extends State<ArsenalWidget> {
     });
   }
 
+  void _handleItemTap(int index) {
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     debugPrint(R.image.icon_all().keyName);
-    // packages/com_3gtt_jsxw/assets/images/arsenal/icon_all.png
     return HeadGridView(
       headers: const [ArsenalHeader()],
-      itemCount: 3,
+      padding: const EdgeInsets.all(5),
+      itemCount: listModel.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3, childAspectRatio: 1),
+          crossAxisCount: 3,
+          childAspectRatio: 1,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10
+      ),
       controller: scrollController,
       itemBuilder: (BuildContext context, int index) {
-        return const Text('data');
+        return  GestureDetector(
+          onTap: () => _handleItemTap(index),
+          child: ArsenalGridItem(index: index + 1, model: listModel[index])
+        );
       },
     );
   }
 }
 
-class ArsenaGrideItem extends StatefulWidget {
-  const ArsenaGrideItem({Key? key}) : super(key: key);
+class ArsenalGridItem extends StatefulWidget {
+  const ArsenalGridItem({Key? key, required this.index, required this.model}) : super(key: key);
+  final int index;
+  final ArsenalModel model;
 
   @override
-  State<ArsenaGrideItem> createState() => _ArsenaGrideItemState();
+  State<ArsenalGridItem> createState() => _ArsenalGridItemState();
 }
 
-class _ArsenaGrideItemState extends State<ArsenaGrideItem> {
+class _ArsenalGridItemState extends State<ArsenalGridItem> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Stack(
+        children: [
+          ClipRRect(
+          //剪裁为圆角矩形
+          borderRadius: BorderRadius.circular(5.0),
+            child: HorizontalFullImageWidget(
+                index: widget.index,
+                title: widget.model.title
+            ),
+          )
+        ],
+      );
   }
 }
 
@@ -83,7 +109,7 @@ class ArsenalHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(5),
       child: Stack(
         fit: StackFit.passthrough,
         alignment: Alignment.center,
