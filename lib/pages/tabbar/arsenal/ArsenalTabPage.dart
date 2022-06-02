@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:com_3gtt_jsxw/model/arsenal_model.dart';
 import 'package:com_3gtt_jsxw/widgets/HeaderGridView.dart';
 import 'package:com_3gtt_jsxw/widgets/HorizontalFullImageWidget.dart';
+import 'package:get/get.dart';
 
 class ArsenalTabPage extends StatefulWidget {
   const ArsenalTabPage({Key? key}) : super(key: key);
@@ -14,8 +15,15 @@ class ArsenalTabPage extends StatefulWidget {
 }
 
 class _ArsenalTabPageState extends State<ArsenalTabPage> {
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+
     return const CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(),
         child: SafeArea(child: ArsenalWidget()));
@@ -48,13 +56,12 @@ class _ArsenalWidgetState extends State<ArsenalWidget> {
   }
 
   void _handleItemTap(int index) {
-
+      Get.toNamed("/ArsenalListPage");
   }
 
 
   @override
   Widget build(BuildContext context) {
-    debugPrint(R.image.icon_all().keyName);
     return HeadGridView(
       headers: const [ArsenalHeader()],
       padding: const EdgeInsets.all(5),

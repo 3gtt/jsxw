@@ -1,9 +1,9 @@
-import 'package:com_3gtt_jsxw/pages/MilitaryOnlineTabPage.dart';
+import 'package:com_3gtt_jsxw/pages/tabbar/MilitaryOnlineTabPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:com_3gtt_jsxw/generated/l10n.dart';
 import 'package:com_3gtt_jsxw/r.g.dart';
 import 'package:flutter/material.dart';
-import 'package:com_3gtt_jsxw/pages/ArsenalTabPage.dart';
+import 'package:com_3gtt_jsxw/pages/tabbar/arsenal/ArsenalTabPage.dart';
 
 class _TabInfo {
   const _TabInfo(this.title, this.img);
