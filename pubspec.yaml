@@ -26,6 +26,14 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+  - packages/com_3gtt_jsxw/assets/images/arsenal/arsenal1.jpeg
+  - packages/com_3gtt_jsxw/assets/images/arsenal/arsenal2.jpeg
+  - packages/com_3gtt_jsxw/assets/images/arsenal/arsenal3.jpeg
+  - packages/com_3gtt_jsxw/assets/images/arsenal/arsenal4.jpeg
+  - packages/com_3gtt_jsxw/assets/images/arsenal/arsenal5.jpeg
+  - packages/com_3gtt_jsxw/assets/images/arsenal/arsenal6.jpeg
+  - packages/com_3gtt_jsxw/assets/images/arsenal/arsenal7.jpeg
+  - packages/com_3gtt_jsxw/assets/images/arsenal/arsenal8.jpeg
   - packages/com_3gtt_jsxw/assets/images/arsenal/icon_1.png
   - packages/com_3gtt_jsxw/assets/images/arsenal/icon_10.png
   - packages/com_3gtt_jsxw/assets/images/arsenal/icon_101.png
@@ -51,6 +59,66 @@ flutter:
   - packages/com_3gtt_jsxw/assets/images/arsenal/icon_8.png
   - packages/com_3gtt_jsxw/assets/images/arsenal/icon_9.png
   - packages/com_3gtt_jsxw/assets/images/arsenal/icon_all.png
+  - packages/com_3gtt_jsxw/assets/images/country/america_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/argentina_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/australia_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/austria_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/belgium_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/bosnia_and_herzegovina_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/brazil_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/bulgaria_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/canada_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/chile_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/china_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/croatia_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/czech_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/denmark_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/egypt_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/europeanunion_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/finland_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/france_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/germany_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/greece_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/hungary_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/india_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/indonesia_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/iran_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/iraq_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/ireland_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/israel_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/italy_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/japan_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/jordan_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/kazakhstan_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/korea_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/luxembourg_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/malaysia_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/mexico_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/myanmar_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/netherlands_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/new_zealand_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/north_korea_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/norway_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/pakistan_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/panama_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/peru_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/poland_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/portugal_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/romania_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/russia_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/serbia_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/singapore_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/slovakia_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/south_africa_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/spain_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/sweden_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/switzerland_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/thailand_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/the_united_arab_emirates_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/turkey_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/ukraine_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/united_kingdom_s.png
+  - packages/com_3gtt_jsxw/assets/images/country/vietnam_s.png
   - packages/com_3gtt_jsxw/assets/images/tabbar/tabbar_1.png
   - packages/com_3gtt_jsxw/assets/images/tabbar/tabbar_2.png
   - packages/com_3gtt_jsxw/assets/images/tabbar/tabbar_3.png

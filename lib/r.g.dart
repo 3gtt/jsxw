@@ -93,6 +93,54 @@ class AssetResource {
 class _R_Image_AssetResource {
   const _R_Image_AssetResource();
 
+  /// asset: lib/assets/images/arsenal/arsenal1.jpeg
+  // ignore: non_constant_identifier_names
+  final arsenal1_jpeg = const AssetResource(
+      "assets/images/arsenal/arsenal1.jpeg",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/arsenal/arsenal2.jpeg
+  // ignore: non_constant_identifier_names
+  final arsenal2_jpeg = const AssetResource(
+      "assets/images/arsenal/arsenal2.jpeg",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/arsenal/arsenal3.jpeg
+  // ignore: non_constant_identifier_names
+  final arsenal3_jpeg = const AssetResource(
+      "assets/images/arsenal/arsenal3.jpeg",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/arsenal/arsenal4.jpeg
+  // ignore: non_constant_identifier_names
+  final arsenal4_jpeg = const AssetResource(
+      "assets/images/arsenal/arsenal4.jpeg",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/arsenal/arsenal5.jpeg
+  // ignore: non_constant_identifier_names
+  final arsenal5_jpeg = const AssetResource(
+      "assets/images/arsenal/arsenal5.jpeg",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/arsenal/arsenal6.jpeg
+  // ignore: non_constant_identifier_names
+  final arsenal6_jpeg = const AssetResource(
+      "assets/images/arsenal/arsenal6.jpeg",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/arsenal/arsenal7.jpeg
+  // ignore: non_constant_identifier_names
+  final arsenal7_jpeg = const AssetResource(
+      "assets/images/arsenal/arsenal7.jpeg",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/arsenal/arsenal8.jpeg
+  // ignore: non_constant_identifier_names
+  final arsenal8_jpeg = const AssetResource(
+      "assets/images/arsenal/arsenal8.jpeg",
+      packageName: R.package);
+
   /// asset: lib/assets/images/arsenal/icon_1.png
   // ignore: non_constant_identifier_names
   final icon_1 = const AssetResource("assets/images/arsenal/icon_1.png",
@@ -218,6 +266,321 @@ class _R_Image_AssetResource {
   final icon_all = const AssetResource("assets/images/arsenal/icon_all.png",
       packageName: R.package);
 
+  /// asset: lib/assets/images/country/america_s.png
+  // ignore: non_constant_identifier_names
+  final america_s = const AssetResource("assets/images/country/america_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/argentina_s.png
+  // ignore: non_constant_identifier_names
+  final argentina_s = const AssetResource(
+      "assets/images/country/argentina_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/australia_s.png
+  // ignore: non_constant_identifier_names
+  final australia_s = const AssetResource(
+      "assets/images/country/australia_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/austria_s.png
+  // ignore: non_constant_identifier_names
+  final austria_s = const AssetResource("assets/images/country/austria_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/belgium_s.png
+  // ignore: non_constant_identifier_names
+  final belgium_s = const AssetResource("assets/images/country/belgium_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/bosnia_and_herzegovina_s.png
+  // ignore: non_constant_identifier_names
+  final bosnia_and_herzegovina_s = const AssetResource(
+      "assets/images/country/bosnia_and_herzegovina_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/brazil_s.png
+  // ignore: non_constant_identifier_names
+  final brazil_s = const AssetResource("assets/images/country/brazil_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/bulgaria_s.png
+  // ignore: non_constant_identifier_names
+  final bulgaria_s = const AssetResource("assets/images/country/bulgaria_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/canada_s.png
+  // ignore: non_constant_identifier_names
+  final canada_s = const AssetResource("assets/images/country/canada_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/chile_s.png
+  // ignore: non_constant_identifier_names
+  final chile_s = const AssetResource("assets/images/country/chile_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/china_s.png
+  // ignore: non_constant_identifier_names
+  final china_s = const AssetResource("assets/images/country/china_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/croatia_s.png
+  // ignore: non_constant_identifier_names
+  final croatia_s = const AssetResource("assets/images/country/croatia_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/czech_s.png
+  // ignore: non_constant_identifier_names
+  final czech_s = const AssetResource("assets/images/country/czech_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/denmark_s.png
+  // ignore: non_constant_identifier_names
+  final denmark_s = const AssetResource("assets/images/country/denmark_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/egypt_s.png
+  // ignore: non_constant_identifier_names
+  final egypt_s = const AssetResource("assets/images/country/egypt_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/europeanunion_s.png
+  // ignore: non_constant_identifier_names
+  final europeanunion_s = const AssetResource(
+      "assets/images/country/europeanunion_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/finland_s.png
+  // ignore: non_constant_identifier_names
+  final finland_s = const AssetResource("assets/images/country/finland_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/france_s.png
+  // ignore: non_constant_identifier_names
+  final france_s = const AssetResource("assets/images/country/france_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/germany_s.png
+  // ignore: non_constant_identifier_names
+  final germany_s = const AssetResource("assets/images/country/germany_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/greece_s.png
+  // ignore: non_constant_identifier_names
+  final greece_s = const AssetResource("assets/images/country/greece_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/hungary_s.png
+  // ignore: non_constant_identifier_names
+  final hungary_s = const AssetResource("assets/images/country/hungary_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/india_s.png
+  // ignore: non_constant_identifier_names
+  final india_s = const AssetResource("assets/images/country/india_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/indonesia_s.png
+  // ignore: non_constant_identifier_names
+  final indonesia_s = const AssetResource(
+      "assets/images/country/indonesia_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/iran_s.png
+  // ignore: non_constant_identifier_names
+  final iran_s = const AssetResource("assets/images/country/iran_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/iraq_s.png
+  // ignore: non_constant_identifier_names
+  final iraq_s = const AssetResource("assets/images/country/iraq_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/ireland_s.png
+  // ignore: non_constant_identifier_names
+  final ireland_s = const AssetResource("assets/images/country/ireland_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/israel_s.png
+  // ignore: non_constant_identifier_names
+  final israel_s = const AssetResource("assets/images/country/israel_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/italy_s.png
+  // ignore: non_constant_identifier_names
+  final italy_s = const AssetResource("assets/images/country/italy_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/japan_s.png
+  // ignore: non_constant_identifier_names
+  final japan_s = const AssetResource("assets/images/country/japan_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/jordan_s.png
+  // ignore: non_constant_identifier_names
+  final jordan_s = const AssetResource("assets/images/country/jordan_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/kazakhstan_s.png
+  // ignore: non_constant_identifier_names
+  final kazakhstan_s = const AssetResource(
+      "assets/images/country/kazakhstan_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/korea_s.png
+  // ignore: non_constant_identifier_names
+  final korea_s = const AssetResource("assets/images/country/korea_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/luxembourg_s.png
+  // ignore: non_constant_identifier_names
+  final luxembourg_s = const AssetResource(
+      "assets/images/country/luxembourg_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/malaysia_s.png
+  // ignore: non_constant_identifier_names
+  final malaysia_s = const AssetResource("assets/images/country/malaysia_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/mexico_s.png
+  // ignore: non_constant_identifier_names
+  final mexico_s = const AssetResource("assets/images/country/mexico_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/myanmar_s.png
+  // ignore: non_constant_identifier_names
+  final myanmar_s = const AssetResource("assets/images/country/myanmar_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/netherlands_s.png
+  // ignore: non_constant_identifier_names
+  final netherlands_s = const AssetResource(
+      "assets/images/country/netherlands_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/new_zealand_s.png
+  // ignore: non_constant_identifier_names
+  final new_zealand_s = const AssetResource(
+      "assets/images/country/new_zealand_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/north_korea_s.png
+  // ignore: non_constant_identifier_names
+  final north_korea_s = const AssetResource(
+      "assets/images/country/north_korea_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/norway_s.png
+  // ignore: non_constant_identifier_names
+  final norway_s = const AssetResource("assets/images/country/norway_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/pakistan_s.png
+  // ignore: non_constant_identifier_names
+  final pakistan_s = const AssetResource("assets/images/country/pakistan_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/panama_s.png
+  // ignore: non_constant_identifier_names
+  final panama_s = const AssetResource("assets/images/country/panama_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/peru_s.png
+  // ignore: non_constant_identifier_names
+  final peru_s = const AssetResource("assets/images/country/peru_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/poland_s.png
+  // ignore: non_constant_identifier_names
+  final poland_s = const AssetResource("assets/images/country/poland_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/portugal_s.png
+  // ignore: non_constant_identifier_names
+  final portugal_s = const AssetResource("assets/images/country/portugal_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/romania_s.png
+  // ignore: non_constant_identifier_names
+  final romania_s = const AssetResource("assets/images/country/romania_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/russia_s.png
+  // ignore: non_constant_identifier_names
+  final russia_s = const AssetResource("assets/images/country/russia_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/serbia_s.png
+  // ignore: non_constant_identifier_names
+  final serbia_s = const AssetResource("assets/images/country/serbia_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/singapore_s.png
+  // ignore: non_constant_identifier_names
+  final singapore_s = const AssetResource(
+      "assets/images/country/singapore_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/slovakia_s.png
+  // ignore: non_constant_identifier_names
+  final slovakia_s = const AssetResource("assets/images/country/slovakia_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/south_africa_s.png
+  // ignore: non_constant_identifier_names
+  final south_africa_s = const AssetResource(
+      "assets/images/country/south_africa_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/spain_s.png
+  // ignore: non_constant_identifier_names
+  final spain_s = const AssetResource("assets/images/country/spain_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/sweden_s.png
+  // ignore: non_constant_identifier_names
+  final sweden_s = const AssetResource("assets/images/country/sweden_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/switzerland_s.png
+  // ignore: non_constant_identifier_names
+  final switzerland_s = const AssetResource(
+      "assets/images/country/switzerland_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/thailand_s.png
+  // ignore: non_constant_identifier_names
+  final thailand_s = const AssetResource("assets/images/country/thailand_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/the_united_arab_emirates_s.png
+  // ignore: non_constant_identifier_names
+  final the_united_arab_emirates_s = const AssetResource(
+      "assets/images/country/the_united_arab_emirates_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/turkey_s.png
+  // ignore: non_constant_identifier_names
+  final turkey_s = const AssetResource("assets/images/country/turkey_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/ukraine_s.png
+  // ignore: non_constant_identifier_names
+  final ukraine_s = const AssetResource("assets/images/country/ukraine_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/united_kingdom_s.png
+  // ignore: non_constant_identifier_names
+  final united_kingdom_s = const AssetResource(
+      "assets/images/country/united_kingdom_s.png",
+      packageName: R.package);
+
+  /// asset: lib/assets/images/country/vietnam_s.png
+  // ignore: non_constant_identifier_names
+  final vietnam_s = const AssetResource("assets/images/country/vietnam_s.png",
+      packageName: R.package);
+
   /// asset: lib/assets/images/tabbar/tabbar_1.png
   // ignore: non_constant_identifier_names
   final tabbar_1 = const AssetResource("assets/images/tabbar/tabbar_1.png",
@@ -266,6 +629,54 @@ class _R_Image {
   const _R_Image();
 
   final asset = const _R_Image_AssetResource();
+
+  /// asset: lib/assets/images/arsenal/arsenal1.jpeg
+  // ignore: non_constant_identifier_names
+  AssetImage arsenal1_jpeg() {
+    return AssetImage(asset.arsenal1_jpeg.keyName);
+  }
+
+  /// asset: lib/assets/images/arsenal/arsenal2.jpeg
+  // ignore: non_constant_identifier_names
+  AssetImage arsenal2_jpeg() {
+    return AssetImage(asset.arsenal2_jpeg.keyName);
+  }
+
+  /// asset: lib/assets/images/arsenal/arsenal3.jpeg
+  // ignore: non_constant_identifier_names
+  AssetImage arsenal3_jpeg() {
+    return AssetImage(asset.arsenal3_jpeg.keyName);
+  }
+
+  /// asset: lib/assets/images/arsenal/arsenal4.jpeg
+  // ignore: non_constant_identifier_names
+  AssetImage arsenal4_jpeg() {
+    return AssetImage(asset.arsenal4_jpeg.keyName);
+  }
+
+  /// asset: lib/assets/images/arsenal/arsenal5.jpeg
+  // ignore: non_constant_identifier_names
+  AssetImage arsenal5_jpeg() {
+    return AssetImage(asset.arsenal5_jpeg.keyName);
+  }
+
+  /// asset: lib/assets/images/arsenal/arsenal6.jpeg
+  // ignore: non_constant_identifier_names
+  AssetImage arsenal6_jpeg() {
+    return AssetImage(asset.arsenal6_jpeg.keyName);
+  }
+
+  /// asset: lib/assets/images/arsenal/arsenal7.jpeg
+  // ignore: non_constant_identifier_names
+  AssetImage arsenal7_jpeg() {
+    return AssetImage(asset.arsenal7_jpeg.keyName);
+  }
+
+  /// asset: lib/assets/images/arsenal/arsenal8.jpeg
+  // ignore: non_constant_identifier_names
+  AssetImage arsenal8_jpeg() {
+    return AssetImage(asset.arsenal8_jpeg.keyName);
+  }
 
   /// asset: lib/assets/images/arsenal/icon_1.png
   // ignore: non_constant_identifier_names
@@ -415,6 +826,366 @@ class _R_Image {
   // ignore: non_constant_identifier_names
   AssetImage icon_all() {
     return AssetImage(asset.icon_all.keyName);
+  }
+
+  /// asset: lib/assets/images/country/america_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage america_s() {
+    return AssetImage(asset.america_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/argentina_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage argentina_s() {
+    return AssetImage(asset.argentina_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/australia_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage australia_s() {
+    return AssetImage(asset.australia_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/austria_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage austria_s() {
+    return AssetImage(asset.austria_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/belgium_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage belgium_s() {
+    return AssetImage(asset.belgium_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/bosnia_and_herzegovina_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage bosnia_and_herzegovina_s() {
+    return AssetImage(asset.bosnia_and_herzegovina_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/brazil_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage brazil_s() {
+    return AssetImage(asset.brazil_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/bulgaria_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage bulgaria_s() {
+    return AssetImage(asset.bulgaria_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/canada_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage canada_s() {
+    return AssetImage(asset.canada_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/chile_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage chile_s() {
+    return AssetImage(asset.chile_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/china_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage china_s() {
+    return AssetImage(asset.china_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/croatia_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage croatia_s() {
+    return AssetImage(asset.croatia_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/czech_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage czech_s() {
+    return AssetImage(asset.czech_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/denmark_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage denmark_s() {
+    return AssetImage(asset.denmark_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/egypt_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage egypt_s() {
+    return AssetImage(asset.egypt_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/europeanunion_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage europeanunion_s() {
+    return AssetImage(asset.europeanunion_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/finland_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage finland_s() {
+    return AssetImage(asset.finland_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/france_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage france_s() {
+    return AssetImage(asset.france_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/germany_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage germany_s() {
+    return AssetImage(asset.germany_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/greece_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage greece_s() {
+    return AssetImage(asset.greece_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/hungary_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage hungary_s() {
+    return AssetImage(asset.hungary_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/india_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage india_s() {
+    return AssetImage(asset.india_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/indonesia_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage indonesia_s() {
+    return AssetImage(asset.indonesia_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/iran_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage iran_s() {
+    return AssetImage(asset.iran_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/iraq_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage iraq_s() {
+    return AssetImage(asset.iraq_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/ireland_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage ireland_s() {
+    return AssetImage(asset.ireland_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/israel_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage israel_s() {
+    return AssetImage(asset.israel_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/italy_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage italy_s() {
+    return AssetImage(asset.italy_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/japan_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage japan_s() {
+    return AssetImage(asset.japan_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/jordan_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage jordan_s() {
+    return AssetImage(asset.jordan_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/kazakhstan_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage kazakhstan_s() {
+    return AssetImage(asset.kazakhstan_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/korea_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage korea_s() {
+    return AssetImage(asset.korea_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/luxembourg_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage luxembourg_s() {
+    return AssetImage(asset.luxembourg_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/malaysia_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage malaysia_s() {
+    return AssetImage(asset.malaysia_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/mexico_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage mexico_s() {
+    return AssetImage(asset.mexico_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/myanmar_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage myanmar_s() {
+    return AssetImage(asset.myanmar_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/netherlands_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage netherlands_s() {
+    return AssetImage(asset.netherlands_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/new_zealand_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage new_zealand_s() {
+    return AssetImage(asset.new_zealand_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/north_korea_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage north_korea_s() {
+    return AssetImage(asset.north_korea_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/norway_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage norway_s() {
+    return AssetImage(asset.norway_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/pakistan_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage pakistan_s() {
+    return AssetImage(asset.pakistan_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/panama_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage panama_s() {
+    return AssetImage(asset.panama_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/peru_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage peru_s() {
+    return AssetImage(asset.peru_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/poland_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage poland_s() {
+    return AssetImage(asset.poland_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/portugal_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage portugal_s() {
+    return AssetImage(asset.portugal_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/romania_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage romania_s() {
+    return AssetImage(asset.romania_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/russia_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage russia_s() {
+    return AssetImage(asset.russia_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/serbia_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage serbia_s() {
+    return AssetImage(asset.serbia_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/singapore_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage singapore_s() {
+    return AssetImage(asset.singapore_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/slovakia_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage slovakia_s() {
+    return AssetImage(asset.slovakia_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/south_africa_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage south_africa_s() {
+    return AssetImage(asset.south_africa_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/spain_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage spain_s() {
+    return AssetImage(asset.spain_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/sweden_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage sweden_s() {
+    return AssetImage(asset.sweden_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/switzerland_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage switzerland_s() {
+    return AssetImage(asset.switzerland_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/thailand_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage thailand_s() {
+    return AssetImage(asset.thailand_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/the_united_arab_emirates_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage the_united_arab_emirates_s() {
+    return AssetImage(asset.the_united_arab_emirates_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/turkey_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage turkey_s() {
+    return AssetImage(asset.turkey_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/ukraine_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage ukraine_s() {
+    return AssetImage(asset.ukraine_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/united_kingdom_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage united_kingdom_s() {
+    return AssetImage(asset.united_kingdom_s.keyName);
+  }
+
+  /// asset: lib/assets/images/country/vietnam_s.png
+  // ignore: non_constant_identifier_names
+  AssetImage vietnam_s() {
+    return AssetImage(asset.vietnam_s.keyName);
   }
 
   /// asset: lib/assets/images/tabbar/tabbar_1.png
