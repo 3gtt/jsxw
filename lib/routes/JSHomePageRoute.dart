@@ -5,6 +5,7 @@ import 'package:com_3gtt_jsxw/pages/JSHomePage.dart';
 import 'package:com_3gtt_jsxw/generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:com_3gtt_jsxw/pages/tabbar/arsenal/ArsenalListPage.dart';
+import 'package:com_3gtt_jsxw/pages/tabbar/arsenal/AllArsenalListPage.dart';
 import 'package:get/get.dart';
 
 
@@ -35,7 +36,8 @@ class JSHomePageRoute extends StatelessWidget {
       ),
       routes: {
         '/' : (context) => const JSHomePage(),
-        "/ArsenalListPage" : (context) => const ArsenalListPage()
+        "/ArsenalListPage" : (context) => const ArsenalListPage(),
+        "/AllArsenalListPage" : (context) => const AllArsenalListPage(),
       },
     );
   }

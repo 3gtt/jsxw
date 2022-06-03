@@ -58,12 +58,20 @@ class _ArsenalWidgetState extends State<ArsenalWidget> {
   void _handleItemTap(int index) {
       Get.toNamed("/ArsenalListPage");
   }
+  void _handleHeaderTap() {
+      Get.toNamed("/AllArsenalListPage");
+  }
 
 
   @override
   Widget build(BuildContext context) {
     return HeadGridView(
-      headers: const [ArsenalHeader()],
+      headers: [
+        GestureDetector(
+          onTap: () => _handleHeaderTap(),
+          child: const ArsenalHeader()
+        ),
+      ],
       padding: const EdgeInsets.all(5),
       itemCount: listModel.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

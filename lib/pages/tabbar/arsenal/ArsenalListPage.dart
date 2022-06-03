@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:com_3gtt_jsxw/controller/ArsenalListPageController.dart';
 import 'package:com_3gtt_jsxw/r.g.dart';
 import 'package:com_3gtt_jsxw/widgets/HorizontalFullImageWidget.dart';
+import 'package:com_3gtt_jsxw/widgets/LoadingMoreWidget.dart';
 
 class ArsenalListPage extends StatelessWidget {
   const ArsenalListPage({Key? key}) : super(key: key);
@@ -15,46 +16,107 @@ class ArsenalListPage extends StatelessWidget {
       backgroundColor: CupertinoColors.systemBackground,
       child: GetBuilder(
           init: ArsenalListPageController(),
-          builder: (context) => const ArsenalContainer()),
+          builder: (context) => ArsenalContainer()),
     );
   }
 }
 
-class ArsenalContainer extends StatelessWidget {
-  const ArsenalContainer({super.key});
+class ArsenalContainer extends StatefulWidget {
+  const ArsenalContainer({Key? key}) : super(key: key);
+
+  @override
+  State<ArsenalContainer> createState() => _ArsenalContainerState();
+}
+
+class _ArsenalContainerState extends State<ArsenalContainer> {
+  final _scrollController = ScrollController(initialScrollOffset: 0);
+  var isEndLoading = true;
+  var isEnd = true;
+  ArsenalListPageController c = Get.find<ArsenalListPageController>();
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(() {
+      if (_scrollController.position.pixels ==
+          _scrollController.position.maxScrollExtent) {
+        if (c.arsenalModels.length < 20) {
+          isEndLoading = false;
+        }else {
+          isEnd = false;
+        }
+        setState(() {});
+        if (isEnd) {
+          c.mock(() {
+            isEndLoading = true;
+            setState(() {});
+          });
+        }
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _scrollController.removeListener(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+        minimum: EdgeInsets.only(bottom: 20),
+        bottom: false,
         child: Column(
-          children: const [
-            HorSelector(listTitle: ["全部国家", "全部舰船舰艇", "全部时间"]),
-            Expanded(
-              child: ArsenalGridWidget(),
-            )
-          ],
-        ));
+      children: [
+        const HorSelector(listTitle: ["全部国家", "全部舰船舰艇", "全部时间"]),
+        Expanded(
+          child: ArsenalGridWidget(sController: _scrollController),
+        ),
+        Offstage(
+            offstage: isEndLoading,
+            child: Container(
+              height: 40,
+              padding: const EdgeInsets.only(top: 0),
+              child: const LoadingMoreWidget(),
+            )),
+        Offstage(
+            offstage: isEnd,
+            child: Container(
+              height: 40,
+              alignment: Alignment.center,
+              padding: const EdgeInsets.only(top: 0),
+              child: const Text(
+                "没有更多了",
+                style: TextStyle(color: Colors.grey, fontSize: 13),
+              ),
+            ))
+      ],
+    ));
   }
 }
 
 class ArsenalGridWidget extends StatelessWidget {
-  const ArsenalGridWidget({Key? key}) : super(key: key);
+  const ArsenalGridWidget({Key? key, this.sController}) : super(key: key);
+  final ScrollController? sController;
 
   @override
   Widget build(BuildContext context) {
     ArsenalListPageController c = Get.find<ArsenalListPageController>();
     return GridView.builder(
-        itemCount: c.arsenalModels.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            mainAxisSpacing: 5,
-            crossAxisSpacing: 0,
-            childAspectRatio: 1),
-        itemBuilder: (BuildContext context, int index) {
-          return Padding(
-              padding: EdgeInsets.all(10),
-              child: ArsenalListGridItem(index: index));
-        });
+      itemCount: c.arsenalModels.length,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 5,
+          crossAxisSpacing: 0,
+          childAspectRatio: 1),
+      itemBuilder: (BuildContext context, int index) {
+        return Padding(
+            padding: const EdgeInsets.all(10),
+            child: ArsenalListGridItem(index: index));
+      },
+      controller: sController,
+    );
   }
 }
 
@@ -69,14 +131,19 @@ class ArsenalListGridItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         ArsenalListHorWidget(index: index),
-        Text(
-          c.arsenalModels[index].subTitle,
-          style: TextStyle(fontSize: 12, color: Colors.grey),
-        ),
+        Padding(
+            padding:
+                const EdgeInsets.only(left: 0, right: 0, top: 3, bottom: 3),
+            child: Text(
+              c.arsenalModels[index].subTitle,
+              style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+              overflow: TextOverflow.ellipsis,
+            )),
         Text(
           c.arsenalModels[index].des,
           maxLines: 2,
-          style: TextStyle(fontSize: 14),
+          style: const TextStyle(fontSize: 14),
+          overflow: TextOverflow.ellipsis,
         ),
       ],
     );
@@ -95,14 +162,14 @@ class ArsenalListHorWidget extends StatelessWidget {
         aspectRatio: 640 / 420.0,
         child: Stack(
           children: [
-            ClipRRect(
-                borderRadius: BorderRadius.circular(5.0),
-                child: Image(
-                    fit: BoxFit.cover,
-                    image: AssetImage(
-                        "packages/com_3gtt_jsxw/assets/images/arsenal/arsenal${index +
-                            1}.jpeg"))
-            ),
+            AspectRatio(
+                aspectRatio: 640 / 420.0,
+                child: ClipRRect(
+                    borderRadius: BorderRadius.circular(5.0),
+                    child: Image(
+                        fit: BoxFit.cover,
+                        image: AssetImage(
+                            "packages/com_3gtt_jsxw/assets/images/arsenal/arsenal${c.arsenalModels[index].img}.jpeg")))),
             Align(
               alignment: Alignment.topRight,
               child: ClipRRect(
@@ -148,10 +215,7 @@ class HorSelector extends StatelessWidget {
             padding: const EdgeInsets.all(0.5),
             child: CustomPaint(
               painter: const HorLinePainter(count: 3),
-              size: Size(MediaQuery
-                  .of(context)
-                  .size
-                  .width, height),
+              size: Size(MediaQuery.of(context).size.width, height),
             ),
           ),
           Flex(direction: Axis.horizontal, children: [
