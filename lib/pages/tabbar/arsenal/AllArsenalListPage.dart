@@ -9,7 +9,10 @@ class AllArsenalListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(),
+      navigationBar: CupertinoNavigationBar(
+        previousPageTitle: "武器库",
+        middle: Text(Get.arguments ?? ""),
+      ),
       backgroundColor: CupertinoColors.systemBackground,
       child: GetBuilder(
           init: ArsenalListPageController(),

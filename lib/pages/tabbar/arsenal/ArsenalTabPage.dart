@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:com_3gtt_jsxw/model/arsenal_model.dart';
 import 'package:com_3gtt_jsxw/widgets/HeaderGridView.dart';
 import 'package:com_3gtt_jsxw/widgets/HorizontalFullImageWidget.dart';
-import 'package:get/get.dart';
+import 'package:com_3gtt_jsxw/common/RouteManager.dart';
 
 class ArsenalTabPage extends StatefulWidget {
   const ArsenalTabPage({Key? key}) : super(key: key);
@@ -56,12 +56,11 @@ class _ArsenalWidgetState extends State<ArsenalWidget> {
   }
 
   void _handleItemTap(int index) {
-      Get.toNamed("/ArsenalListPage");
+    RouteManager.jumpArsenalListPage(listModel[index].title);
   }
   void _handleHeaderTap() {
-      Get.toNamed("/AllArsenalListPage");
+      RouteManager.jumpAllArsenalListPage("全部武器");
   }
-
 
   @override
   Widget build(BuildContext context) {

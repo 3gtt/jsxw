@@ -12,11 +12,14 @@ class ArsenalListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(),
+      navigationBar: CupertinoNavigationBar(
+        previousPageTitle: "武器库",
+        middle: Text(Get.arguments ?? ""),
+      ),
       backgroundColor: CupertinoColors.systemBackground,
       child: GetBuilder(
           init: ArsenalListPageController(),
-          builder: (context) => ArsenalContainer()),
+          builder: (context) => const ArsenalContainer()),
     );
   }
 }
@@ -111,6 +114,7 @@ class ArsenalGridWidget extends StatelessWidget {
           crossAxisSpacing: 0,
           childAspectRatio: 1),
       itemBuilder: (BuildContext context, int index) {
+
         return Padding(
             padding: const EdgeInsets.all(10),
             child: ArsenalListGridItem(index: index));

@@ -1,13 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:com_3gtt_jsxw/pages/JSHomePage.dart';
 import 'package:com_3gtt_jsxw/generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:com_3gtt_jsxw/pages/tabbar/arsenal/ArsenalListPage.dart';
-import 'package:com_3gtt_jsxw/pages/tabbar/arsenal/AllArsenalListPage.dart';
 import 'package:get/get.dart';
-
+import 'package:com_3gtt_jsxw/common/RouteManager.dart';
 
 class JSHomePageRoute extends StatelessWidget {
   const JSHomePageRoute({Key? key}) : super(key: key);
@@ -34,11 +31,7 @@ class JSHomePageRoute extends StatelessWidget {
       theme: const CupertinoThemeData(
        primaryColor :  Colors.blue
       ),
-      routes: {
-        '/' : (context) => const JSHomePage(),
-        "/ArsenalListPage" : (context) => const ArsenalListPage(),
-        "/AllArsenalListPage" : (context) => const AllArsenalListPage(),
-      },
+      routes: RouteManager.getRoutes(),
     );
   }
 }
