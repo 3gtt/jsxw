@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:com_3gtt_jsxw/r.g.dart';
-import 'package:get/utils.dart';
 
 // 这是个比较复杂widget 解决一些特殊场景(比如Colum)无法使image宽度最大化的问题
 class HorizontalFullImageWidget extends StatefulWidget {

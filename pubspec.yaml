@@ -19,6 +19,7 @@ dependencies:
   get: ^4.6.5
   logger: ^1.1.0
   dio: ^4.0.6
+  pull_to_refresh: ^2.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -124,7 +125,10 @@ flutter:
   - packages/com_3gtt_jsxw/assets/images/tabbar/tabbar_3.png
   - packages/com_3gtt_jsxw/assets/images/tabbar/tabbar_4.png
   - packages/com_3gtt_jsxw/assets/images/tabbar/tabbar_5.png
+  - packages/com_3gtt_jsxw/assets/texts/aircraft.json
+  - packages/com_3gtt_jsxw/assets/texts/arsenalmenu.json
   - packages/com_3gtt_jsxw/assets/texts/weapons_home.json
+  - packages/com_3gtt_jsxw/assets/texts/Aircraft.json
 flutter_intl:
   enabled: true
 flr:

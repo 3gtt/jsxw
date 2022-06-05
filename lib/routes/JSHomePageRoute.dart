@@ -9,6 +9,8 @@ import 'package:com_3gtt_jsxw/common/RouteManager.dart';
 class JSHomePageRoute extends StatelessWidget {
   const JSHomePageRoute({Key? key}) : super(key: key);
 
+
+
   @override
   Widget build(BuildContext context) {
     return GetCupertinoApp(

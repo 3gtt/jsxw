@@ -55,8 +55,7 @@ class AssetResource {
   /// The name used to generate the key to obtain the asset resource. For local assets
   /// this is [assetName], and for assets from packages the [assetName] is
   /// prefixed 'packages/<package_name>/'.
-  String get keyName =>
-      packageName == null ? assetName : "packages/$packageName/$assetName";
+  String get keyName => packageName == null ? assetName : "packages/$packageName/$assetName";
 
   /// The file basename of the asset resource.
   String get fileBasename {
@@ -95,516 +94,395 @@ class _R_Image_AssetResource {
 
   /// asset: lib/assets/images/arsenal/arsenal1.jpeg
   // ignore: non_constant_identifier_names
-  final arsenal1_jpeg = const AssetResource(
-      "assets/images/arsenal/arsenal1.jpeg",
-      packageName: R.package);
+  final arsenal1_jpeg = const AssetResource("assets/images/arsenal/arsenal1.jpeg", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/arsenal2.jpeg
   // ignore: non_constant_identifier_names
-  final arsenal2_jpeg = const AssetResource(
-      "assets/images/arsenal/arsenal2.jpeg",
-      packageName: R.package);
+  final arsenal2_jpeg = const AssetResource("assets/images/arsenal/arsenal2.jpeg", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/arsenal3.jpeg
   // ignore: non_constant_identifier_names
-  final arsenal3_jpeg = const AssetResource(
-      "assets/images/arsenal/arsenal3.jpeg",
-      packageName: R.package);
+  final arsenal3_jpeg = const AssetResource("assets/images/arsenal/arsenal3.jpeg", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/arsenal4.jpeg
   // ignore: non_constant_identifier_names
-  final arsenal4_jpeg = const AssetResource(
-      "assets/images/arsenal/arsenal4.jpeg",
-      packageName: R.package);
+  final arsenal4_jpeg = const AssetResource("assets/images/arsenal/arsenal4.jpeg", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/arsenal5.jpeg
   // ignore: non_constant_identifier_names
-  final arsenal5_jpeg = const AssetResource(
-      "assets/images/arsenal/arsenal5.jpeg",
-      packageName: R.package);
+  final arsenal5_jpeg = const AssetResource("assets/images/arsenal/arsenal5.jpeg", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/arsenal6.jpeg
   // ignore: non_constant_identifier_names
-  final arsenal6_jpeg = const AssetResource(
-      "assets/images/arsenal/arsenal6.jpeg",
-      packageName: R.package);
+  final arsenal6_jpeg = const AssetResource("assets/images/arsenal/arsenal6.jpeg", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/arsenal7.jpeg
   // ignore: non_constant_identifier_names
-  final arsenal7_jpeg = const AssetResource(
-      "assets/images/arsenal/arsenal7.jpeg",
-      packageName: R.package);
+  final arsenal7_jpeg = const AssetResource("assets/images/arsenal/arsenal7.jpeg", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/arsenal8.jpeg
   // ignore: non_constant_identifier_names
-  final arsenal8_jpeg = const AssetResource(
-      "assets/images/arsenal/arsenal8.jpeg",
-      packageName: R.package);
+  final arsenal8_jpeg = const AssetResource("assets/images/arsenal/arsenal8.jpeg", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_1.png
   // ignore: non_constant_identifier_names
-  final icon_1 = const AssetResource("assets/images/arsenal/icon_1.png",
-      packageName: R.package);
+  final icon_1 = const AssetResource("assets/images/arsenal/icon_1.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_10.png
   // ignore: non_constant_identifier_names
-  final icon_10 = const AssetResource("assets/images/arsenal/icon_10.png",
-      packageName: R.package);
+  final icon_10 = const AssetResource("assets/images/arsenal/icon_10.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_101.png
   // ignore: non_constant_identifier_names
-  final icon_101 = const AssetResource("assets/images/arsenal/icon_101.png",
-      packageName: R.package);
+  final icon_101 = const AssetResource("assets/images/arsenal/icon_101.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_102.png
   // ignore: non_constant_identifier_names
-  final icon_102 = const AssetResource("assets/images/arsenal/icon_102.png",
-      packageName: R.package);
+  final icon_102 = const AssetResource("assets/images/arsenal/icon_102.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_103.png
   // ignore: non_constant_identifier_names
-  final icon_103 = const AssetResource("assets/images/arsenal/icon_103.png",
-      packageName: R.package);
+  final icon_103 = const AssetResource("assets/images/arsenal/icon_103.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_104.png
   // ignore: non_constant_identifier_names
-  final icon_104 = const AssetResource("assets/images/arsenal/icon_104.png",
-      packageName: R.package);
+  final icon_104 = const AssetResource("assets/images/arsenal/icon_104.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_105.png
   // ignore: non_constant_identifier_names
-  final icon_105 = const AssetResource("assets/images/arsenal/icon_105.png",
-      packageName: R.package);
+  final icon_105 = const AssetResource("assets/images/arsenal/icon_105.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_106.png
   // ignore: non_constant_identifier_names
-  final icon_106 = const AssetResource("assets/images/arsenal/icon_106.png",
-      packageName: R.package);
+  final icon_106 = const AssetResource("assets/images/arsenal/icon_106.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_107.png
   // ignore: non_constant_identifier_names
-  final icon_107 = const AssetResource("assets/images/arsenal/icon_107.png",
-      packageName: R.package);
+  final icon_107 = const AssetResource("assets/images/arsenal/icon_107.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_108.png
   // ignore: non_constant_identifier_names
-  final icon_108 = const AssetResource("assets/images/arsenal/icon_108.png",
-      packageName: R.package);
+  final icon_108 = const AssetResource("assets/images/arsenal/icon_108.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_11.png
   // ignore: non_constant_identifier_names
-  final icon_11 = const AssetResource("assets/images/arsenal/icon_11.png",
-      packageName: R.package);
+  final icon_11 = const AssetResource("assets/images/arsenal/icon_11.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_12.png
   // ignore: non_constant_identifier_names
-  final icon_12 = const AssetResource("assets/images/arsenal/icon_12.png",
-      packageName: R.package);
+  final icon_12 = const AssetResource("assets/images/arsenal/icon_12.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_13.png
   // ignore: non_constant_identifier_names
-  final icon_13 = const AssetResource("assets/images/arsenal/icon_13.png",
-      packageName: R.package);
+  final icon_13 = const AssetResource("assets/images/arsenal/icon_13.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_14.png
   // ignore: non_constant_identifier_names
-  final icon_14 = const AssetResource("assets/images/arsenal/icon_14.png",
-      packageName: R.package);
+  final icon_14 = const AssetResource("assets/images/arsenal/icon_14.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_15.png
   // ignore: non_constant_identifier_names
-  final icon_15 = const AssetResource("assets/images/arsenal/icon_15.png",
-      packageName: R.package);
+  final icon_15 = const AssetResource("assets/images/arsenal/icon_15.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_16.png
   // ignore: non_constant_identifier_names
-  final icon_16 = const AssetResource("assets/images/arsenal/icon_16.png",
-      packageName: R.package);
+  final icon_16 = const AssetResource("assets/images/arsenal/icon_16.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_2.png
   // ignore: non_constant_identifier_names
-  final icon_2 = const AssetResource("assets/images/arsenal/icon_2.png",
-      packageName: R.package);
+  final icon_2 = const AssetResource("assets/images/arsenal/icon_2.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_3.png
   // ignore: non_constant_identifier_names
-  final icon_3 = const AssetResource("assets/images/arsenal/icon_3.png",
-      packageName: R.package);
+  final icon_3 = const AssetResource("assets/images/arsenal/icon_3.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_4.png
   // ignore: non_constant_identifier_names
-  final icon_4 = const AssetResource("assets/images/arsenal/icon_4.png",
-      packageName: R.package);
+  final icon_4 = const AssetResource("assets/images/arsenal/icon_4.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_5.png
   // ignore: non_constant_identifier_names
-  final icon_5 = const AssetResource("assets/images/arsenal/icon_5.png",
-      packageName: R.package);
+  final icon_5 = const AssetResource("assets/images/arsenal/icon_5.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_6.png
   // ignore: non_constant_identifier_names
-  final icon_6 = const AssetResource("assets/images/arsenal/icon_6.png",
-      packageName: R.package);
+  final icon_6 = const AssetResource("assets/images/arsenal/icon_6.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_7.png
   // ignore: non_constant_identifier_names
-  final icon_7 = const AssetResource("assets/images/arsenal/icon_7.png",
-      packageName: R.package);
+  final icon_7 = const AssetResource("assets/images/arsenal/icon_7.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_8.png
   // ignore: non_constant_identifier_names
-  final icon_8 = const AssetResource("assets/images/arsenal/icon_8.png",
-      packageName: R.package);
+  final icon_8 = const AssetResource("assets/images/arsenal/icon_8.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_9.png
   // ignore: non_constant_identifier_names
-  final icon_9 = const AssetResource("assets/images/arsenal/icon_9.png",
-      packageName: R.package);
+  final icon_9 = const AssetResource("assets/images/arsenal/icon_9.png", packageName: R.package);
 
   /// asset: lib/assets/images/arsenal/icon_all.png
   // ignore: non_constant_identifier_names
-  final icon_all = const AssetResource("assets/images/arsenal/icon_all.png",
-      packageName: R.package);
+  final icon_all = const AssetResource("assets/images/arsenal/icon_all.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/america_s.png
   // ignore: non_constant_identifier_names
-  final america_s = const AssetResource("assets/images/country/america_s.png",
-      packageName: R.package);
+  final america_s = const AssetResource("assets/images/country/america_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/argentina_s.png
   // ignore: non_constant_identifier_names
-  final argentina_s = const AssetResource(
-      "assets/images/country/argentina_s.png",
-      packageName: R.package);
+  final argentina_s = const AssetResource("assets/images/country/argentina_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/australia_s.png
   // ignore: non_constant_identifier_names
-  final australia_s = const AssetResource(
-      "assets/images/country/australia_s.png",
-      packageName: R.package);
+  final australia_s = const AssetResource("assets/images/country/australia_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/austria_s.png
   // ignore: non_constant_identifier_names
-  final austria_s = const AssetResource("assets/images/country/austria_s.png",
-      packageName: R.package);
+  final austria_s = const AssetResource("assets/images/country/austria_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/belgium_s.png
   // ignore: non_constant_identifier_names
-  final belgium_s = const AssetResource("assets/images/country/belgium_s.png",
-      packageName: R.package);
+  final belgium_s = const AssetResource("assets/images/country/belgium_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/bosnia_and_herzegovina_s.png
   // ignore: non_constant_identifier_names
-  final bosnia_and_herzegovina_s = const AssetResource(
-      "assets/images/country/bosnia_and_herzegovina_s.png",
-      packageName: R.package);
+  final bosnia_and_herzegovina_s = const AssetResource("assets/images/country/bosnia_and_herzegovina_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/brazil_s.png
   // ignore: non_constant_identifier_names
-  final brazil_s = const AssetResource("assets/images/country/brazil_s.png",
-      packageName: R.package);
+  final brazil_s = const AssetResource("assets/images/country/brazil_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/bulgaria_s.png
   // ignore: non_constant_identifier_names
-  final bulgaria_s = const AssetResource("assets/images/country/bulgaria_s.png",
-      packageName: R.package);
+  final bulgaria_s = const AssetResource("assets/images/country/bulgaria_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/canada_s.png
   // ignore: non_constant_identifier_names
-  final canada_s = const AssetResource("assets/images/country/canada_s.png",
-      packageName: R.package);
+  final canada_s = const AssetResource("assets/images/country/canada_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/chile_s.png
   // ignore: non_constant_identifier_names
-  final chile_s = const AssetResource("assets/images/country/chile_s.png",
-      packageName: R.package);
+  final chile_s = const AssetResource("assets/images/country/chile_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/china_s.png
   // ignore: non_constant_identifier_names
-  final china_s = const AssetResource("assets/images/country/china_s.png",
-      packageName: R.package);
+  final china_s = const AssetResource("assets/images/country/china_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/croatia_s.png
   // ignore: non_constant_identifier_names
-  final croatia_s = const AssetResource("assets/images/country/croatia_s.png",
-      packageName: R.package);
+  final croatia_s = const AssetResource("assets/images/country/croatia_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/czech_s.png
   // ignore: non_constant_identifier_names
-  final czech_s = const AssetResource("assets/images/country/czech_s.png",
-      packageName: R.package);
+  final czech_s = const AssetResource("assets/images/country/czech_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/denmark_s.png
   // ignore: non_constant_identifier_names
-  final denmark_s = const AssetResource("assets/images/country/denmark_s.png",
-      packageName: R.package);
+  final denmark_s = const AssetResource("assets/images/country/denmark_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/egypt_s.png
   // ignore: non_constant_identifier_names
-  final egypt_s = const AssetResource("assets/images/country/egypt_s.png",
-      packageName: R.package);
+  final egypt_s = const AssetResource("assets/images/country/egypt_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/europeanunion_s.png
   // ignore: non_constant_identifier_names
-  final europeanunion_s = const AssetResource(
-      "assets/images/country/europeanunion_s.png",
-      packageName: R.package);
+  final europeanunion_s = const AssetResource("assets/images/country/europeanunion_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/finland_s.png
   // ignore: non_constant_identifier_names
-  final finland_s = const AssetResource("assets/images/country/finland_s.png",
-      packageName: R.package);
+  final finland_s = const AssetResource("assets/images/country/finland_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/france_s.png
   // ignore: non_constant_identifier_names
-  final france_s = const AssetResource("assets/images/country/france_s.png",
-      packageName: R.package);
+  final france_s = const AssetResource("assets/images/country/france_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/germany_s.png
   // ignore: non_constant_identifier_names
-  final germany_s = const AssetResource("assets/images/country/germany_s.png",
-      packageName: R.package);
+  final germany_s = const AssetResource("assets/images/country/germany_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/greece_s.png
   // ignore: non_constant_identifier_names
-  final greece_s = const AssetResource("assets/images/country/greece_s.png",
-      packageName: R.package);
+  final greece_s = const AssetResource("assets/images/country/greece_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/hungary_s.png
   // ignore: non_constant_identifier_names
-  final hungary_s = const AssetResource("assets/images/country/hungary_s.png",
-      packageName: R.package);
+  final hungary_s = const AssetResource("assets/images/country/hungary_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/india_s.png
   // ignore: non_constant_identifier_names
-  final india_s = const AssetResource("assets/images/country/india_s.png",
-      packageName: R.package);
+  final india_s = const AssetResource("assets/images/country/india_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/indonesia_s.png
   // ignore: non_constant_identifier_names
-  final indonesia_s = const AssetResource(
-      "assets/images/country/indonesia_s.png",
-      packageName: R.package);
+  final indonesia_s = const AssetResource("assets/images/country/indonesia_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/iran_s.png
   // ignore: non_constant_identifier_names
-  final iran_s = const AssetResource("assets/images/country/iran_s.png",
-      packageName: R.package);
+  final iran_s = const AssetResource("assets/images/country/iran_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/iraq_s.png
   // ignore: non_constant_identifier_names
-  final iraq_s = const AssetResource("assets/images/country/iraq_s.png",
-      packageName: R.package);
+  final iraq_s = const AssetResource("assets/images/country/iraq_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/ireland_s.png
   // ignore: non_constant_identifier_names
-  final ireland_s = const AssetResource("assets/images/country/ireland_s.png",
-      packageName: R.package);
+  final ireland_s = const AssetResource("assets/images/country/ireland_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/israel_s.png
   // ignore: non_constant_identifier_names
-  final israel_s = const AssetResource("assets/images/country/israel_s.png",
-      packageName: R.package);
+  final israel_s = const AssetResource("assets/images/country/israel_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/italy_s.png
   // ignore: non_constant_identifier_names
-  final italy_s = const AssetResource("assets/images/country/italy_s.png",
-      packageName: R.package);
+  final italy_s = const AssetResource("assets/images/country/italy_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/japan_s.png
   // ignore: non_constant_identifier_names
-  final japan_s = const AssetResource("assets/images/country/japan_s.png",
-      packageName: R.package);
+  final japan_s = const AssetResource("assets/images/country/japan_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/jordan_s.png
   // ignore: non_constant_identifier_names
-  final jordan_s = const AssetResource("assets/images/country/jordan_s.png",
-      packageName: R.package);
+  final jordan_s = const AssetResource("assets/images/country/jordan_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/kazakhstan_s.png
   // ignore: non_constant_identifier_names
-  final kazakhstan_s = const AssetResource(
-      "assets/images/country/kazakhstan_s.png",
-      packageName: R.package);
+  final kazakhstan_s = const AssetResource("assets/images/country/kazakhstan_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/korea_s.png
   // ignore: non_constant_identifier_names
-  final korea_s = const AssetResource("assets/images/country/korea_s.png",
-      packageName: R.package);
+  final korea_s = const AssetResource("assets/images/country/korea_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/luxembourg_s.png
   // ignore: non_constant_identifier_names
-  final luxembourg_s = const AssetResource(
-      "assets/images/country/luxembourg_s.png",
-      packageName: R.package);
+  final luxembourg_s = const AssetResource("assets/images/country/luxembourg_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/malaysia_s.png
   // ignore: non_constant_identifier_names
-  final malaysia_s = const AssetResource("assets/images/country/malaysia_s.png",
-      packageName: R.package);
+  final malaysia_s = const AssetResource("assets/images/country/malaysia_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/mexico_s.png
   // ignore: non_constant_identifier_names
-  final mexico_s = const AssetResource("assets/images/country/mexico_s.png",
-      packageName: R.package);
+  final mexico_s = const AssetResource("assets/images/country/mexico_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/myanmar_s.png
   // ignore: non_constant_identifier_names
-  final myanmar_s = const AssetResource("assets/images/country/myanmar_s.png",
-      packageName: R.package);
+  final myanmar_s = const AssetResource("assets/images/country/myanmar_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/netherlands_s.png
   // ignore: non_constant_identifier_names
-  final netherlands_s = const AssetResource(
-      "assets/images/country/netherlands_s.png",
-      packageName: R.package);
+  final netherlands_s = const AssetResource("assets/images/country/netherlands_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/new_zealand_s.png
   // ignore: non_constant_identifier_names
-  final new_zealand_s = const AssetResource(
-      "assets/images/country/new_zealand_s.png",
-      packageName: R.package);
+  final new_zealand_s = const AssetResource("assets/images/country/new_zealand_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/north_korea_s.png
   // ignore: non_constant_identifier_names
-  final north_korea_s = const AssetResource(
-      "assets/images/country/north_korea_s.png",
-      packageName: R.package);
+  final north_korea_s = const AssetResource("assets/images/country/north_korea_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/norway_s.png
   // ignore: non_constant_identifier_names
-  final norway_s = const AssetResource("assets/images/country/norway_s.png",
-      packageName: R.package);
+  final norway_s = const AssetResource("assets/images/country/norway_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/pakistan_s.png
   // ignore: non_constant_identifier_names
-  final pakistan_s = const AssetResource("assets/images/country/pakistan_s.png",
-      packageName: R.package);
+  final pakistan_s = const AssetResource("assets/images/country/pakistan_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/panama_s.png
   // ignore: non_constant_identifier_names
-  final panama_s = const AssetResource("assets/images/country/panama_s.png",
-      packageName: R.package);
+  final panama_s = const AssetResource("assets/images/country/panama_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/peru_s.png
   // ignore: non_constant_identifier_names
-  final peru_s = const AssetResource("assets/images/country/peru_s.png",
-      packageName: R.package);
+  final peru_s = const AssetResource("assets/images/country/peru_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/poland_s.png
   // ignore: non_constant_identifier_names
-  final poland_s = const AssetResource("assets/images/country/poland_s.png",
-      packageName: R.package);
+  final poland_s = const AssetResource("assets/images/country/poland_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/portugal_s.png
   // ignore: non_constant_identifier_names
-  final portugal_s = const AssetResource("assets/images/country/portugal_s.png",
-      packageName: R.package);
+  final portugal_s = const AssetResource("assets/images/country/portugal_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/romania_s.png
   // ignore: non_constant_identifier_names
-  final romania_s = const AssetResource("assets/images/country/romania_s.png",
-      packageName: R.package);
+  final romania_s = const AssetResource("assets/images/country/romania_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/russia_s.png
   // ignore: non_constant_identifier_names
-  final russia_s = const AssetResource("assets/images/country/russia_s.png",
-      packageName: R.package);
+  final russia_s = const AssetResource("assets/images/country/russia_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/serbia_s.png
   // ignore: non_constant_identifier_names
-  final serbia_s = const AssetResource("assets/images/country/serbia_s.png",
-      packageName: R.package);
+  final serbia_s = const AssetResource("assets/images/country/serbia_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/singapore_s.png
   // ignore: non_constant_identifier_names
-  final singapore_s = const AssetResource(
-      "assets/images/country/singapore_s.png",
-      packageName: R.package);
+  final singapore_s = const AssetResource("assets/images/country/singapore_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/slovakia_s.png
   // ignore: non_constant_identifier_names
-  final slovakia_s = const AssetResource("assets/images/country/slovakia_s.png",
-      packageName: R.package);
+  final slovakia_s = const AssetResource("assets/images/country/slovakia_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/south_africa_s.png
   // ignore: non_constant_identifier_names
-  final south_africa_s = const AssetResource(
-      "assets/images/country/south_africa_s.png",
-      packageName: R.package);
+  final south_africa_s = const AssetResource("assets/images/country/south_africa_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/spain_s.png
   // ignore: non_constant_identifier_names
-  final spain_s = const AssetResource("assets/images/country/spain_s.png",
-      packageName: R.package);
+  final spain_s = const AssetResource("assets/images/country/spain_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/sweden_s.png
   // ignore: non_constant_identifier_names
-  final sweden_s = const AssetResource("assets/images/country/sweden_s.png",
-      packageName: R.package);
+  final sweden_s = const AssetResource("assets/images/country/sweden_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/switzerland_s.png
   // ignore: non_constant_identifier_names
-  final switzerland_s = const AssetResource(
-      "assets/images/country/switzerland_s.png",
-      packageName: R.package);
+  final switzerland_s = const AssetResource("assets/images/country/switzerland_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/thailand_s.png
   // ignore: non_constant_identifier_names
-  final thailand_s = const AssetResource("assets/images/country/thailand_s.png",
-      packageName: R.package);
+  final thailand_s = const AssetResource("assets/images/country/thailand_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/the_united_arab_emirates_s.png
   // ignore: non_constant_identifier_names
-  final the_united_arab_emirates_s = const AssetResource(
-      "assets/images/country/the_united_arab_emirates_s.png",
-      packageName: R.package);
+  final the_united_arab_emirates_s = const AssetResource("assets/images/country/the_united_arab_emirates_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/turkey_s.png
   // ignore: non_constant_identifier_names
-  final turkey_s = const AssetResource("assets/images/country/turkey_s.png",
-      packageName: R.package);
+  final turkey_s = const AssetResource("assets/images/country/turkey_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/ukraine_s.png
   // ignore: non_constant_identifier_names
-  final ukraine_s = const AssetResource("assets/images/country/ukraine_s.png",
-      packageName: R.package);
+  final ukraine_s = const AssetResource("assets/images/country/ukraine_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/united_kingdom_s.png
   // ignore: non_constant_identifier_names
-  final united_kingdom_s = const AssetResource(
-      "assets/images/country/united_kingdom_s.png",
-      packageName: R.package);
+  final united_kingdom_s = const AssetResource("assets/images/country/united_kingdom_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/country/vietnam_s.png
   // ignore: non_constant_identifier_names
-  final vietnam_s = const AssetResource("assets/images/country/vietnam_s.png",
-      packageName: R.package);
+  final vietnam_s = const AssetResource("assets/images/country/vietnam_s.png", packageName: R.package);
 
   /// asset: lib/assets/images/tabbar/tabbar_1.png
   // ignore: non_constant_identifier_names
-  final tabbar_1 = const AssetResource("assets/images/tabbar/tabbar_1.png",
-      packageName: R.package);
+  final tabbar_1 = const AssetResource("assets/images/tabbar/tabbar_1.png", packageName: R.package);
 
   /// asset: lib/assets/images/tabbar/tabbar_2.png
   // ignore: non_constant_identifier_names
-  final tabbar_2 = const AssetResource("assets/images/tabbar/tabbar_2.png",
-      packageName: R.package);
+  final tabbar_2 = const AssetResource("assets/images/tabbar/tabbar_2.png", packageName: R.package);
 
   /// asset: lib/assets/images/tabbar/tabbar_3.png
   // ignore: non_constant_identifier_names
-  final tabbar_3 = const AssetResource("assets/images/tabbar/tabbar_3.png",
-      packageName: R.package);
+  final tabbar_3 = const AssetResource("assets/images/tabbar/tabbar_3.png", packageName: R.package);
 
   /// asset: lib/assets/images/tabbar/tabbar_4.png
   // ignore: non_constant_identifier_names
-  final tabbar_4 = const AssetResource("assets/images/tabbar/tabbar_4.png",
-      packageName: R.package);
+  final tabbar_4 = const AssetResource("assets/images/tabbar/tabbar_4.png", packageName: R.package);
 
   /// asset: lib/assets/images/tabbar/tabbar_5.png
   // ignore: non_constant_identifier_names
-  final tabbar_5 = const AssetResource("assets/images/tabbar/tabbar_5.png",
-      packageName: R.package);
+  final tabbar_5 = const AssetResource("assets/images/tabbar/tabbar_5.png", packageName: R.package);
 }
 
 // ignore: camel_case_types
@@ -616,11 +494,17 @@ class _R_Svg_AssetResource {
 class _R_Text_AssetResource {
   const _R_Text_AssetResource();
 
+  /// asset: lib/assets/texts/aircraft.json
+  // ignore: non_constant_identifier_names
+  final aircraft_json = const AssetResource("assets/texts/aircraft.json", packageName: R.package);
+
+  /// asset: lib/assets/texts/arsenalmenu.json
+  // ignore: non_constant_identifier_names
+  final arsenalmenu_json = const AssetResource("assets/texts/arsenalmenu.json", packageName: R.package);
+
   /// asset: lib/assets/texts/weapons_home.json
   // ignore: non_constant_identifier_names
-  final weapons_home_json = const AssetResource(
-      "assets/texts/weapons_home.json",
-      packageName: R.package);
+  final weapons_home_json = const AssetResource("assets/texts/weapons_home.json", packageName: R.package);
 }
 
 /// This `_R_Image` class is generated and contains references to static non-svg type image asset resources.
@@ -1233,6 +1117,20 @@ class _R_Text {
   const _R_Text();
 
   final asset = const _R_Text_AssetResource();
+
+  /// asset: lib/assets/texts/aircraft.json
+  // ignore: non_constant_identifier_names
+  Future<String> aircraft_json() {
+    final str = rootBundle.loadString(asset.aircraft_json.keyName);
+    return str;
+  }
+
+  /// asset: lib/assets/texts/arsenalmenu.json
+  // ignore: non_constant_identifier_names
+  Future<String> arsenalmenu_json() {
+    final str = rootBundle.loadString(asset.arsenalmenu_json.keyName);
+    return str;
+  }
 
   /// asset: lib/assets/texts/weapons_home.json
   // ignore: non_constant_identifier_names

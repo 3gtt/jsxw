@@ -7,26 +7,26 @@ import 'package:com_3gtt_jsxw/widgets/HeaderGridView.dart';
 import 'package:com_3gtt_jsxw/widgets/HorizontalFullImageWidget.dart';
 import 'package:com_3gtt_jsxw/common/RouteManager.dart';
 
-class ArsenalTabPage extends StatefulWidget {
+
+class ArsenalTabPage extends StatelessWidget {
   const ArsenalTabPage({Key? key}) : super(key: key);
 
-  @override
-  State<ArsenalTabPage> createState() => _ArsenalTabPageState();
-}
-
-class _ArsenalTabPageState extends State<ArsenalTabPage> {
-
-  @override
-  void initState() {
-    super.initState();
+  void _onSearchButTap() {
+    RouteManager.jumpSearchArsenalPage();
   }
-
   @override
   Widget build(BuildContext context) {
-
-    return const CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(),
-        child: SafeArea(child: ArsenalWidget()));
+    return CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(
+            trailing:  CupertinoButton(
+              padding: const EdgeInsets.only(right: 0),
+              alignment: Alignment.centerRight,
+              onPressed: _onSearchButTap,
+              child: const Icon(CupertinoIcons.search),
+            ),
+        ),
+        child: const SafeArea(child: ArsenalWidget())
+    );
   }
 }
 

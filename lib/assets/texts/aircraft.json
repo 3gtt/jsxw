@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "title": "全部飞行器",
+    },
+    {
+      "title": "战斗机",
+      "key": "subtype",
+      "value": "战斗机"
+    },
+    {
+      "title": "攻击机",
+      "key": "subtype",
+      "value": "攻击机"
+    },
+    {
+      "title": "轰炸机",
+      "key": "subtype",
+      "value": "轰炸机"
+    },
+    {
+      "title": "教练机",
+      "key": "subtype",
+      "value": "教练机"
+    },
+    {
+      "title": "预警机",
+      "key": "subtype",
+      "value": "预警机"
+    },
+    {
+      "title": "侦察机",
+      "key": "subtype",
+      "value": "侦察机"
+    },
+    {
+      "title": "反潜机",
+      "key": "subtype",
+      "value": "反潜机"
+    },
+    {
+      "title": "电子战机",
+      "key": "subtype",
+      "value": "电子战机"
+    },
+    {
+      "title": "无人机",
+      "key": "subtype",
+      "value": "无人机"
+    },
+    {
+      "title": "运输机",
+      "key": "subtype",
+      "value": "运输机"
+    },
+    {
+      "title": "飞艇",
+      "key": "subtype",
+      "value": "飞艇"
+    },
+    {
+      "title": "试验机",
+      "key": "subtype",
+      "value": "试验机"
+    },
+    {
+      "title": "加油机",
+      "key": "subtype",
+      "value": "加油机"
+    },
+    {
+      "title": "通用飞机",
+      "key": "subtype",
+      "value": "通用飞机"
+    },
+    {
+      "title": "干线",
+      "key": "subtype",
+      "value": "干线"
+    },
+    {
+      "title": "支线",
+      "key": "subtype",
+      "value": "支线"
+    },
+    {
+      "title": "运输直升机",
+      "key": "subtype",
+      "value": "运输直升机"
+    },
+    {
+      "title": "武装直升机",
+      "key": "subtype",
+      "value": "武装直升机"
+    },
+    {
+      "title": "多用途直升机",
+      "key": "subtype",
+      "value": "多用途直升机"
+    }
+  ]
+}
