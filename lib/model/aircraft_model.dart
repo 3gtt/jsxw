@@ -23,13 +23,16 @@ class Item extends Object {
   @JsonKey(name: 'title')
   String title;
 
+  @JsonKey(defaultValue: false)
+  bool isSelect;
+
   @JsonKey(name: 'key')
-  String key;
+  String? key;
 
   @JsonKey(name: 'value')
-  String value;
+  String? value;
 
-  Item(this.title,this.key,this.value,);
+  Item(this.title,this.key,this.value,this.isSelect);
 
   factory Item.fromJson(Map<String, dynamic> srcJson) => _$ItemFromJson(srcJson);
 

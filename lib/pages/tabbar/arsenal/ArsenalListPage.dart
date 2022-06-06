@@ -1,4 +1,3 @@
-import 'package:com_3gtt_jsxw/model/arsenal_menu_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,7 +17,7 @@ class ArsenalListPage extends StatelessWidget {
         middle: Text(Get.arguments ?? ""),
       ),
       backgroundColor: CupertinoColors.systemBackground,
-      child: GetBuilder(init: ArsenalListPageController(), builder: (context) => const ArsenalContainer()),
+      child: GetBuilder(init: ArsenalListPageController(), id: "111", builder: (context) => const ArsenalContainer()),
     );
   }
 }
@@ -67,10 +66,19 @@ class _ArsenalContainerState extends State<ArsenalContainer> {
     _scrollController.removeListener(() {});
   }
 
+  Widget _getMenuList(int index){
+    if (index == 0) {
+      return ArsenalMenuList();
+    } else if (index == 1){
+      return ArsenalAircraftMenuList();
+    }
+      return ArsenalTimeMenuList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        minimum: const EdgeInsets.only(bottom: 0),
+        minimum: EdgeInsets.only(bottom: 0),
         bottom: false,
         child: Column(
           children: [
@@ -107,7 +115,7 @@ class _ArsenalContainerState extends State<ArsenalContainer> {
                             height: ArsenalListPageController.menuHeight,
                             width: Get.width,
                             color: Colors.white,
-                            child: ArsenalMenuList(),
+                            child: Obx(() => _getMenuList(c.menuSelectCurrentIndex.value)),
                           ),
                         ),
                       )),
@@ -224,26 +232,14 @@ class ArsenalListHorWidget extends StatelessWidget {
 }
 
 /// MenuList
+/// 时间
 // ignore: must_be_immutable
-class ArsenalMenuList extends StatelessWidget {
-  ArsenalMenuList({Key? key}) : super(key: key);
+class ArsenalTimeMenuList extends StatelessWidget {
+  ArsenalTimeMenuList({Key? key}) : super(key: key);
   ArsenalListPageController c = Get.find<ArsenalListPageController>();
 
-  void _handleLeftTap(int index) {
-    if (c.horLeftListSelectModel.value.currentIndex != index) {
-      c.horRightListSelectModel.value.currentIndex = ArsenalListPageController.noSelectedCount;
-    }
-    c.horLeftListSelectModel.value.currentIndex = index;
-    c.horLeftListSelectModel.value.selectIndex = index;
-    c.selectLeftGetRightMenuModel(index);
-  }
-
   void _handleRightTap(int index) {
-    c.horRightListSelectModel.value.currentIndex = index;
-    c.horRightListSelectModel.value.selectIndex = index;
-    String item = c.arsenalRightMenuModels[index].value;
-    c.menuTitles.removeAt(c.currentHorSelectorModel.value.selectIndex);
-    c.menuTitles.insert(c.currentHorSelectorModel.value.selectIndex, item);
+    c.timeCurrentIndex = index;
     c.dismissMenuWidget();
   }
 
@@ -254,21 +250,128 @@ class ArsenalMenuList extends StatelessWidget {
             Expanded(
                 flex: 1,
                 child: ListView.builder(
-                    itemCount: c.arsenalLeftMenuModels.length,
+                    itemCount: c.timeModels.length,
                     itemBuilder: (context, index) {
                       return Material(
                           child: ListTile(
-                        selected: c.horLeftListSelectModel.value.selectIndex == index,
+                        selected: c.timeModels[index].isSelect,
                         selectedColor: Colors.black,
                         selectedTileColor: Colors.white,
                         title: Text(
-                          c.arsenalLeftMenuModels[index].title,
-                          style: TextStyle(color: c.horLeftListSelectModel.value.selectIndex == index ? Colors.red[400] : Colors.black),
+                          c.timeModels[index].title,
+                          style: TextStyle(color: c.timeModels[index].isSelect ? Colors.red[400] : Colors.black),
                         ),
-                        trailing:  (c.menuTitles.length == 3 && c.currentHorSelectorModel.value.currentIndex == 0) ? const Icon(Icons.arrow_right) : null,
-                        onTap: () => _handleLeftTap(index),
+                        onTap: () => _handleRightTap(index),
                       ));
                     })),
+          ],
+        ));
+  }
+}
+
+/// 飞行器
+// ignore: must_be_immutable
+class ArsenalAircraftMenuList extends StatelessWidget {
+  ArsenalAircraftMenuList({Key? key}) : super(key: key);
+  ArsenalListPageController c = Get.find<ArsenalListPageController>();
+
+  void _handleTap(int index) {
+    c.aircraftCurrentIndex = index;
+    c.dismissMenuWidget();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(() => Row(
+          children: [
+            Expanded(
+                flex: 1,
+                child: ListView.builder(
+                    itemCount: c.aircraftModels.length,
+                    itemBuilder: (context, index) {
+                      return Material(
+                          child: ListTile(
+                        selected: c.aircraftModels[index].isSelect,
+                        selectedColor: Colors.black,
+                        selectedTileColor: Colors.white,
+                        title: Text(
+                          c.aircraftModels[index].title,
+                          style: TextStyle(color: c.aircraftModels[index].isSelect ? Colors.red[400] : Colors.black),
+                        ),
+                        onTap: () => _handleTap(index),
+                      ));
+                    })),
+          ],
+        ));
+  }
+}
+
+/// 全部武器
+// ignore: must_be_immutable
+class ArsenalMenuList extends StatelessWidget {
+  ArsenalMenuList({Key? key}) : super(key: key);
+  ArsenalListPageController c = Get.find<ArsenalListPageController>();
+
+  void _handleLeftTap(int index) {
+    /// 用户点击left 更新isSelect 并不代表用户就会选中哪一个， 当用户点击了右边listview才能确认用户选择,所以只需要更新left中的数据即可
+    for (var element in c.arsenalLeftMenuModels) {
+      if (element.isSelect) {
+        element.isSelect = false;
+      }
+    }
+    c.arsenalLeftMenuModels[index].isSelect = true;
+
+    /// 更新右边数据之前需要清洗清洗数据
+    if (c.arsenalLeftCurrentIndex != index) {
+      c.cleanRightListView();
+    }
+
+    /// 更新右边listview数据
+    c.selectLeftGetRightMenuModel(index);
+
+    if (c.arsenalLeftCurrentIndex == index) {
+      if (c.arsenalRightMenuModels.isNotEmpty) {
+        c.arsenalRightMenuModels[c.arsenalRightCurrentIndex].isSelect = true;
+      }
+    }
+  }
+
+  void _handleRightTap(int index) {
+    /// 将数据保存到内存中，方便下次点击时可以正常显示选中状态
+    for (int i = 0; i < c.arsenalLeftMenuModels.length; i++) {
+      if (c.arsenalLeftMenuModels[i].isSelect) {
+        c.arsenalLeftCurrentIndex = i;
+      }
+    }
+    c.arsenalRightCurrentIndex = index;
+    // 退出menu
+    c.dismissMenuWidget();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(() => Row(
+          children: [
+            Visibility(
+                visible: true,
+                child: Expanded(
+                    flex: 1,
+                    child: ListView.builder(
+                        itemCount: c.arsenalLeftMenuModels.length,
+                        itemBuilder: (context, index) {
+                          return Material(
+                              child: ListTile(
+                            selected: c.arsenalLeftMenuModels[index].isSelect,
+                            selectedColor: Colors.black,
+                            selectedTileColor: Colors.white,
+                            title: Text(
+                              c.arsenalLeftMenuModels[index].title,
+                              style: TextStyle(color: c.arsenalLeftMenuModels[index].isSelect ? Colors.red[400] : Colors.black),
+                            ),
+                            trailing: (c.menuSelectCurrentIndex == 0 && index != 0) ? const Icon(Icons.arrow_right) : null,
+                            onTap: () => _handleLeftTap(index),
+                          ));
+                        }))),
             Expanded(
                 flex: 1,
                 child: ListView.builder(
@@ -276,12 +379,12 @@ class ArsenalMenuList extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return Material(
                           child: ListTile(
-                        selected: c.horRightListSelectModel.value.selectIndex == index,
+                        selected: c.arsenalRightMenuModels[index].isSelect,
                         selectedColor: Colors.black,
                         selectedTileColor: Colors.white,
                         title: Text(
                           c.arsenalRightMenuModels[index].title,
-                          style: TextStyle(color: c.horRightListSelectModel.value.selectIndex == index ? Colors.red[400] : Colors.black),
+                          style: TextStyle(color: c.arsenalRightMenuModels[index].isSelect ? Colors.red[400] : Colors.black),
                         ),
                         onTap: () => _handleRightTap(index),
                       ));
@@ -293,12 +396,13 @@ class ArsenalMenuList extends StatelessWidget {
 
 /// horSelectorMenu
 class HorSelector extends StatelessWidget {
-  const HorSelector({Key? key, required this.listTitle, this.height = 40}) : super(key: key);
+  const HorSelector({Key? key, this.height = 40, required this.listTitle}) : super(key: key);
   final double height;
-  final List<String> listTitle;
+  final List<HorSelectorModel> listTitle;
 
   @override
   Widget build(BuildContext context) {
+    ArsenalListPageController c = Get.find<ArsenalListPageController>();
     return SizedBox(
       height: height,
       child: Stack(
@@ -310,7 +414,15 @@ class HorSelector extends StatelessWidget {
               size: Size(MediaQuery.of(context).size.width, height),
             ),
           ),
-          Flex(direction: Axis.horizontal, children: [for (int i = 0; i < listTitle.length; i++) Expanded(flex: 1, child: SelectWidget(title: listTitle[i], index: i))])
+          Flex(direction: Axis.horizontal, children: [
+            for (int i = 0; i < listTitle.length; i++)
+              Expanded(
+                  flex: 1,
+                  child: SelectWidget(
+                    title: listTitle[i].title ?? "",
+                    index: i,
+                  ))
+          ])
         ],
       ),
     );
@@ -331,9 +443,7 @@ class SelectWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _handleOnTap,
-      child: Center(child: Obx(() {
-        return Text(title, style: TextStyle(fontSize: 15, color: c.currentHorSelectorModel.value.currentIndex == index ? Colors.red[400] : Colors.black));
-      })),
+      child: Obx(() => Center(child: Text(title, style: TextStyle(fontSize: 15, color: c.menuTitles[index].isSelect ? Colors.red[400] : Colors.black)))) ,
     );
   }
 }

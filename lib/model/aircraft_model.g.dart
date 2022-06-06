@@ -20,12 +20,14 @@ Map<String, dynamic> _$AircraftModelToJson(AircraftModel instance) =>
 
 Item _$ItemFromJson(Map<String, dynamic> json) => Item(
       json['title'] as String,
-      json['key'] as String,
-      json['value'] as String,
+      json['key'] as String?,
+      json['value'] as String?,
+      json['isSelect'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$ItemToJson(Item instance) => <String, dynamic>{
       'title': instance.title,
+      'isSelect': instance.isSelect,
       'key': instance.key,
       'value': instance.value,
     };

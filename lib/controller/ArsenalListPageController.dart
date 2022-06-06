@@ -3,65 +3,107 @@ import 'package:com_3gtt_jsxw/model/arsenal_menu_model.dart';
 import 'package:get/get.dart';
 import 'package:com_3gtt_jsxw/r.g.dart';
 import 'package:com_3gtt_jsxw/model/aircraft_model.dart';
+import 'package:com_3gtt_jsxw/model/aircraft_time_model.dart';
 
 class ArsenalListPageController extends GetxController {
   // 初始值为1000 不让选中的状态
-  static const noSelectedCount = 1000;
-  final currentHorSelectorModel = HorSelectorModel(currentIndex: noSelectedCount, selectIndex: noSelectedCount).obs;
-  final horLeftListSelectModel = HorSelectorModel(currentIndex: noSelectedCount, selectIndex: noSelectedCount).obs;
-  final horRightListSelectModel = HorSelectorModel(currentIndex: noSelectedCount, selectIndex: noSelectedCount).obs;
+  static const noSelectedCount = 0;
+
+  /// menu的动画
   var isShowMenu = false.obs;
   static double menuHeight = Get.size.height / 5 * 2;
   var animatedHeight = (-menuHeight).obs;
+
+  /// GridView的内容
   var arsenalModels = <ArsenalGridModel>[].obs;
 
   /// menuList
-  var menuTitles = ["全部国家", "全部舰船舰艇", "全部时间"].obs;
-  var arsenalLeftMenuModels = <Other_country>[];
+  var menuTitles = <HorSelectorModel>[].obs;
+  var menuSelectCurrentIndex = noSelectedCount.obs;
+
+  ///全部武器
+  var arsenalLeftMenuModels = <Other_country>[].obs;
+  var arsenalLeftCurrentIndex = noSelectedCount;
+
   var arsenalRightMenuModels = [].obs;
-  var leftCurrent = noSelectedCount.obs;
-  var rightCurrent = noSelectedCount.obs;
+  var arsenalRightCurrentIndex = noSelectedCount;
 
   ///飞行器
   var aircraftModels = [].obs;
+  var aircraftCurrentIndex = noSelectedCount;
 
-
-
-  void selectLeftGetRightMenuModel(int index) {
-    arsenalRightMenuModels.removeRange(0, arsenalRightMenuModels.length);
-    arsenalRightMenuModels.insertAll(0, arsenalLeftMenuModels[index].item ?? []);
-  }
-
-  void showMenuWidget(int index) {
-    currentHorSelectorModel.value = HorSelectorModel(currentIndex: index, selectIndex: index);
-    isShowMenu.value = true;
-    Future.delayed(const Duration(milliseconds: 100)).then((value) => animatedHeight.value = 0);
-  }
-
-  void dismissMenuWidget() {
-    animatedHeight.value = -menuHeight;
-    currentHorSelectorModel.value.currentIndex = noSelectedCount;
-    Future.delayed(const Duration(milliseconds: 300)).then((value) => isShowMenu.value = false);
-  }
+  /// 时间
+  var timeModels = [].obs;
+  var timeCurrentIndex = noSelectedCount;
 
   @override
   void onInit() {
     super.onInit();
     createData();
     _readTestJson();
+    _readAircraftJson();
+    _readTimeJson();
+    menuTitles.insertAll(0, [HorSelectorModel(title: "全部国家"), HorSelectorModel(title: "全部飞行器"), HorSelectorModel(title: "全部时间")]);
+  }
+
+  void showMenuWidget(int index) {
+    /// 下面是动画不需要动
+    isShowMenu.value = true;
+    Future.delayed(const Duration(milliseconds: 100)).then((value) => animatedHeight.value = 0);
+    if (index == 0) {
+      allCountriesShow(index);
+    } else if (index == 1) {
+      aircraftMenuShow(index);
+    } else {
+      timeMenuShow(index);
+    }
+
+    /// 当menulist出现时需要将选择条选中的文字颜色改变
+    cleanHorMenu();
+    changeMenuSelect();
+    menuTitles.refresh();
+  }
+
+  void dismissMenuWidget() {
+    ///UI动画不需要动
+    animatedHeight.value = -menuHeight;
+    Future.delayed(const Duration(milliseconds: 300)).then((value) => isShowMenu.value = false);
+    if (menuSelectCurrentIndex.value == 0) {
+      allCountriesDismiss();
+    } else if (menuSelectCurrentIndex.value == 1) {
+      aircraftMenuDismiss();
+    } else {
+     timeMenuDismiss();
+    }
+    cleanHorMenu();
+    menuTitles.refresh();
   }
 
   /// GridView的数据
   void createData() {
     removeData();
     arsenalModels.insertAll(0, getListModels());
-    update();
   }
 
+  /// 删除GridView的数据
   void removeData() {
     if (arsenalModels.isNotEmpty) {
       arsenalModels.removeRange(0, arsenalModels.length);
     }
+  }
+
+  /// 清洗hormenu的数据
+  void cleanHorMenu() {
+    for (var element in menuTitles) {
+      element.isSelect = false;
+    }
+  }
+
+  /// /// 当menulist出现时需要将选择条选中的文字颜色改变
+  void changeMenuSelect() {
+    var item = menuTitles.removeAt(menuSelectCurrentIndex.value);
+    item.isSelect = true;
+    menuTitles.insert(menuSelectCurrentIndex.value, item);
   }
 
   List<ArsenalGridModel> getListModels() {
@@ -92,22 +134,164 @@ class ArsenalListPageController extends GetxController {
   void _readTestJson() async {
     var jsStr = await R.text.arsenalmenu_json();
     var jsOb = json.decode(jsStr);
-    arsenalLeftMenuModels = ArsenalMenuModel.fromJson(jsOb).otherCountry;
+    arsenalLeftMenuModels.value = ArsenalMenuModel.fromJson(jsOb).otherCountry;
   }
 
   /// 飞行器
-  void _readAircraftjson() async{
+  void _readAircraftJson() async {
     var jsStr = await R.text.aircraft_json();
     var jsOb = json.decode(jsStr);
     aircraftModels.value = AircraftModel.fromJson(jsOb).item;
   }
+
+  /// 时间
+  void _readTimeJson() async {
+    var jsStr = await R.text.arsenalTime_json();
+    var jsOb = json.decode(jsStr);
+    timeModels.value = getAircraftTimeModelList(jsOb);
+  }
 }
 
+/// 全部国家选项
+extension AllCountries on ArsenalListPageController {
+  /// 全部国家菜单弹出后的动作
+  void allCountriesShow(int index) {
+    /// 2个ListView的更新
+    arsenalTwoListUpdate();
+
+    /// 这个是让你知道横向menu的选中索引
+    menuSelectCurrentIndex.value = index;
+  }
+
+  void allCountriesDismiss() {
+    /// 在退出menu的时候一定要清洗数据
+    cleanLeftListView();
+    cleanRightListView();
+    changeMenuTitle();
+  }
+
+  /// 当点击右边listview的时候需要更新hormenu的文字
+  void changeMenuTitle() {
+    var leftItem = arsenalLeftMenuModels[arsenalLeftCurrentIndex].item?[arsenalRightCurrentIndex];
+    if (leftItem != null) {
+      var item = menuTitles.removeAt(menuSelectCurrentIndex.value);
+      item.title = leftItem.title;
+      menuTitles.insert(menuSelectCurrentIndex.value, item);
+    } else {
+      menuTitles[menuSelectCurrentIndex.value].title = arsenalLeftMenuModels[arsenalLeftCurrentIndex].title;
+    }
+  }
+
+  /// 全部武器 点击左边ListView 更新右边ListView的数据
+  void selectLeftGetRightMenuModel(int index) {
+    arsenalRightMenuModels.removeRange(0, arsenalRightMenuModels.length);
+    arsenalRightMenuModels.insertAll(0, arsenalLeftMenuModels[index].item ?? []);
+  }
+
+  /// 2个ListView的更新
+  void arsenalTwoListUpdate() {
+    ///当menuList将要弹出时需要将缓存的选中索引放入到现有的左listview中
+    arsenalLeftMenuModels[arsenalLeftCurrentIndex].isSelect = true;
+
+    /// 右边的menuList需要更新
+    arsenalRightMenuModels.removeRange(0, arsenalRightMenuModels.length);
+    arsenalRightMenuModels.insertAll(0, arsenalLeftMenuModels[arsenalLeftCurrentIndex].item ?? []);
+
+    ///当menuList将要弹出时需要将缓存的选中索引放入到现有的右listview中
+    if (arsenalRightMenuModels.isNotEmpty) {
+      arsenalRightMenuModels[arsenalRightCurrentIndex].isSelect = true;
+    }
+  }
+
+  /// 清洗左listview数据
+  void cleanLeftListView() {
+    for (var element in arsenalLeftMenuModels) {
+      if (element.isSelect) {
+        element.isSelect = false;
+      }
+    }
+  }
+
+  /// 清洗右listview数据
+  void cleanRightListView() {
+    for (var element in arsenalRightMenuModels) {
+      if (element.isSelect) {
+        element.isSelect = false;
+      }
+    }
+  }
+}
+
+/// 飞行器的内容
+extension AircraftMenuShow on ArsenalListPageController {
+  void aircraftMenuShow(int index) {
+    menuSelectCurrentIndex.value = index;
+    cleanAircraftModel();
+    updateAircraft();
+  }
+
+  void aircraftMenuDismiss() {
+    changeAircraftMenuTitle();
+  }
+
+  /// 当点击右边listview的时候需要更新hormenu的文字
+  void changeAircraftMenuTitle() {
+    menuTitles[menuSelectCurrentIndex.value].title = aircraftModels[aircraftCurrentIndex].title;
+  }
+
+  /// 更新飞行器的数据
+  void updateAircraft() {
+    aircraftModels[aircraftCurrentIndex].isSelect = true;
+  }
+
+  /// 清洗数据
+  void cleanAircraftModel() {
+    for (var element in aircraftModels) {
+      if (element.isSelect) {
+        element.isSelect = false;
+      }
+    }
+  }
+}
+
+extension TimeMenuShow on ArsenalListPageController {
+
+  void timeMenuShow(int index) {
+    menuSelectCurrentIndex.value = index;
+    cleanTimeModel();
+    updateTimeModel();
+
+  }
+  void timeMenuDismiss() {
+    changeTimeMenuTitle();
+  }
+
+  void cleanTimeModel(){
+    for (var element in timeModels){
+      if (element.isSelect){
+        element.isSelect = false;
+      }
+    }
+
+  }
+  void updateTimeModel(){
+    timeModels[timeCurrentIndex].isSelect = true;
+  }
+
+  /// 当点击右边listview的时候需要更新hormenu的文字
+  void changeTimeMenuTitle() {
+    menuTitles[menuSelectCurrentIndex.value].title = timeModels[timeCurrentIndex].title;
+  }
+
+}
+
+
 class HorSelectorModel {
-  HorSelectorModel({required this.currentIndex, required this.selectIndex});
+  HorSelectorModel({this.title});
 
   var currentIndex = ArsenalListPageController.noSelectedCount;
-  var selectIndex = ArsenalListPageController.noSelectedCount;
+  bool isSelect = false;
+  String? title;
 }
 
 class ArsenalGridModel {

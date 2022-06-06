@@ -126,6 +126,7 @@ flutter:
   - packages/com_3gtt_jsxw/assets/images/tabbar/tabbar_4.png
   - packages/com_3gtt_jsxw/assets/images/tabbar/tabbar_5.png
   - packages/com_3gtt_jsxw/assets/texts/aircraft.json
+  - packages/com_3gtt_jsxw/assets/texts/arsenalTime.json
   - packages/com_3gtt_jsxw/assets/texts/arsenalmenu.json
   - packages/com_3gtt_jsxw/assets/texts/weapons_home.json
   - packages/com_3gtt_jsxw/assets/texts/Aircraft.json

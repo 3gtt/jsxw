@@ -16,7 +16,10 @@ class AircraftTimeModel extends Object {
   @JsonKey(name: 'title')
   String title;
 
-  AircraftTimeModel(this.title,);
+  @JsonKey(defaultValue: false)
+  bool isSelect;
+
+  AircraftTimeModel(this.title,this.isSelect);
 
   factory AircraftTimeModel.fromJson(Map<String, dynamic> srcJson) => _$AircraftTimeModelFromJson(srcJson);
 

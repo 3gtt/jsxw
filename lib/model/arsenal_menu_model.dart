@@ -24,10 +24,13 @@ class Other_country extends Object {
   @JsonKey(name: 'title')
   String title;
 
+  @JsonKey(defaultValue: false)
+  bool isSelect;
+
   @JsonKey(name: 'item')
   List<Item>? item;
 
-  Other_country(this.title,this.item,);
+  Other_country(this.title,this.item, this.isSelect);
 
   factory Other_country.fromJson(Map<String, dynamic> srcJson) => _$Other_countryFromJson(srcJson);
 
@@ -42,13 +45,16 @@ class Item extends Object {
   @JsonKey(name: 'title')
   String title;
 
+  @JsonKey(defaultValue: false)
+  bool isSelect;
+
   @JsonKey(name: 'key')
   String key;
 
   @JsonKey(name: 'value')
   String value;
 
-  Item(this.title,this.key,this.value,);
+  Item(this.title,this.key,this.value, this.isSelect);
 
   factory Item.fromJson(Map<String, dynamic> srcJson) => _$ItemFromJson(srcJson);
 

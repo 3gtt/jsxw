@@ -498,6 +498,10 @@ class _R_Text_AssetResource {
   // ignore: non_constant_identifier_names
   final aircraft_json = const AssetResource("assets/texts/aircraft.json", packageName: R.package);
 
+  /// asset: lib/assets/texts/arsenalTime.json
+  // ignore: non_constant_identifier_names
+  final arsenalTime_json = const AssetResource("assets/texts/arsenalTime.json", packageName: R.package);
+
   /// asset: lib/assets/texts/arsenalmenu.json
   // ignore: non_constant_identifier_names
   final arsenalmenu_json = const AssetResource("assets/texts/arsenalmenu.json", packageName: R.package);
@@ -1122,6 +1126,13 @@ class _R_Text {
   // ignore: non_constant_identifier_names
   Future<String> aircraft_json() {
     final str = rootBundle.loadString(asset.aircraft_json.keyName);
+    return str;
+  }
+
+  /// asset: lib/assets/texts/arsenalTime.json
+  // ignore: non_constant_identifier_names
+  Future<String> arsenalTime_json() {
+    final str = rootBundle.loadString(asset.arsenalTime_json.keyName);
     return str;
   }
 
