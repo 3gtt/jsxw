@@ -15,23 +15,19 @@ class ArsenalDesPage extends StatelessWidget {
   final screenshotController = ScreenshotController();
 
   void screenshot() async {
-
     final directory = (await getApplicationDocumentsDirectory()).path;
     int fileName = DateTime.now().microsecondsSinceEpoch;
     var path = directory;
     screenshotController.captureAndSave(path, fileName: "{$fileName}.jpg").then((path) {
-      if (path != null){
+      if (path != null) {
         logger.d(path);
-        // Share.shareFiles([value]);
         ImageGallerySaver.saveFile(path);
       }
-    } );
-
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
           middle: const Text("运-20"),
@@ -40,20 +36,22 @@ class ArsenalDesPage extends StatelessWidget {
             width: 100,
             child: ArsenalDesPageTrailing(screenshot: screenshot),
           )),
-      child: GetBuilder(init: ArsenalDesController(), builder: (context) => SafeArea(
-          child: Screenshot(
-            controller: screenshotController ,
-            child: const ArsenalDesWidget(),
-          )
-      )),
+      child: GetBuilder(
+          init: ArsenalDesController(),
+          builder: (context) => SafeArea(
+                  child: Screenshot(
+                controller: screenshotController,
+                child: const ArsenalDesWidget(),
+              ))),
     );
   }
 }
 
 class ArsenalDesPageTrailing extends StatefulWidget {
-   const ArsenalDesPageTrailing({Key? key,required this.screenshot}) : super(key: key);
-   // ignore: prefer_typing_uninitialized_variables
-   final screenshot;
+  const ArsenalDesPageTrailing({Key? key, required this.screenshot}) : super(key: key);
+
+  // ignore: prefer_typing_uninitialized_variables
+  final screenshot;
 
   @override
   State<ArsenalDesPageTrailing> createState() => _ArsenalDesPageTrailingState();
@@ -63,12 +61,17 @@ class _ArsenalDesPageTrailingState extends State<ArsenalDesPageTrailing> {
   var isSelect = false;
 
   void _showActionSheet(BuildContext context) {
-
     showCupertinoModalPopup<void>(
       context: context,
       builder: (BuildContext context) => CupertinoActionSheet(
         title: const Text('更多'),
-        cancelButton: TextButton(onPressed: (){Navigator.pop(context);}, child: const Text("取消",)),
+        cancelButton: TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text(
+              "取消",
+            )),
         actions: <CupertinoActionSheetAction>[
           CupertinoActionSheetAction(
             onPressed: () {
@@ -95,7 +98,6 @@ class _ArsenalDesPageTrailingState extends State<ArsenalDesPageTrailing> {
       ),
     );
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -161,7 +163,7 @@ class ArsenalDesTextItem extends StatelessWidget {
   final ArsenalDesTextItemModel desModel;
 
   void _handleTap() {
-      RouteManager.jumpFeedBackPage(desModel.des);
+    RouteManager.jumpFeedBackPage(desModel.des);
   }
 
   @override
@@ -198,7 +200,9 @@ class ArsenalDesTextItem extends StatelessWidget {
                 const Spacer(),
                 Padding(
                     padding: const EdgeInsets.only(right: 10),
-                    child:  GestureDetector(onTap: _handleTap, child: const Text("纠错", style: TextStyle(color: Colors.black)) ,
+                    child: GestureDetector(
+                      onTap: _handleTap,
+                      child: const Text("纠错", style: TextStyle(color: Colors.black)),
                     )),
               ],
             ),
@@ -236,7 +240,7 @@ class RecommendedItemBox extends StatelessWidget {
   const RecommendedItemBox({Key? key}) : super(key: key);
 
   void _handleTap() {
-      RouteManager.jumpArsenalDesPage();
+    RouteManager.jumpArsenalDesPage();
   }
 
   @override
@@ -295,7 +299,10 @@ class RecommendedItemBox extends StatelessWidget {
                   Expanded(
                       child: Padding(
                     padding: EdgeInsets.only(left: (i % 2) == 0 ? 10 : 5, right: (i % 2) == 1 ? 10 : 5, top: 10, bottom: 15),
-                    child: GestureDetector(onTap: _handleTap,child: RecommendedItem(recommendedModel: c.recommendedModels[i]),) ,
+                    child: GestureDetector(
+                      onTap: _handleTap,
+                      child: RecommendedItem(recommendedModel: c.recommendedModels[i]),
+                    ),
                   ))
               ],
             )

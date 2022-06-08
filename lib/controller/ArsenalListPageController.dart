@@ -92,7 +92,7 @@ class ArsenalListPageController extends GetxController {
     }
   }
 
-  /// 清洗hormenu的数据
+  /// 清洗horMenu的数据
   void cleanHorMenu() {
     for (var element in menuTitles) {
       element.isSelect = false;

@@ -2,11 +2,9 @@ import 'package:get/get.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
 
-
 class ArsenalDesController extends GetxController {
   final desTextListModels = <ArsenalDesTextItemModel>[].obs;
   final recommendedModels = <ArsenalDesRecommendedModel>[].obs;
-
 
   @override
   void onInit() {
@@ -14,9 +12,6 @@ class ArsenalDesController extends GetxController {
 
     createData();
   }
-
-
-
 
   void createData() {
     desTextListModels.insertAll(0, [
@@ -32,11 +27,7 @@ class ArsenalDesController extends GetxController {
       const ArsenalDesRecommendedModel(title: "轰6(图-16)\"獾\"", subTitle: "轰炸机｜二战后至冷战期间", des: "目前是中国人民解放军空军战略轰炸力量的核心机种之一。", img: 1),
       const ArsenalDesRecommendedModel(title: "运20", subTitle: "运输机｜冷战后至今", des: "中国迄今为止研制的投送能力最强的军用运输机。", img: 2),
     ]);
-
   }
-
-
-
 }
 
 class ArsenalDesTextItemModel {
