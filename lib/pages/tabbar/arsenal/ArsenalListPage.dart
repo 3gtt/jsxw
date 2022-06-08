@@ -5,6 +5,7 @@ import 'package:com_3gtt_jsxw/controller/ArsenalListPageController.dart';
 import 'package:com_3gtt_jsxw/r.g.dart';
 import 'package:com_3gtt_jsxw/widgets/HorizontalFullImageWidget.dart';
 import 'package:com_3gtt_jsxw/widgets/LoadingMoreWidget.dart';
+import 'package:com_3gtt_jsxw/common/RouteManager.dart';
 
 class ArsenalListPage extends StatelessWidget {
   const ArsenalListPage({Key? key}) : super(key: key);
@@ -56,7 +57,7 @@ class _ArsenalContainerState extends State<ArsenalContainer> {
     });
   }
 
-  void _hanleMenuListTap() {
+  void _handleMenuListTap() {
     c.dismissMenuWidget();
   }
 
@@ -66,19 +67,19 @@ class _ArsenalContainerState extends State<ArsenalContainer> {
     _scrollController.removeListener(() {});
   }
 
-  Widget _getMenuList(int index){
+  Widget _getMenuList(int index) {
     if (index == 0) {
       return ArsenalMenuList();
-    } else if (index == 1){
+    } else if (index == 1) {
       return ArsenalAircraftMenuList();
     }
-      return ArsenalTimeMenuList();
+    return ArsenalTimeMenuList();
   }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        minimum: EdgeInsets.only(bottom: 0),
+        minimum: const EdgeInsets.only(bottom: 0),
         bottom: false,
         child: Column(
           children: [
@@ -95,7 +96,7 @@ class _ArsenalContainerState extends State<ArsenalContainer> {
                         child: Opacity(
                           opacity: 0.5,
                           child: GestureDetector(
-                            onTap: _hanleMenuListTap,
+                            onTap: _handleMenuListTap,
                             child: Container(
                               height: double.maxFinite,
                               width: double.maxFinite,
@@ -149,6 +150,10 @@ class ArsenalGridWidget extends StatelessWidget {
   const ArsenalGridWidget({Key? key, this.sController}) : super(key: key);
   final ScrollController? sController;
 
+  void _onTap() {
+      RouteManager.jumpArsenalDesPage();
+  }
+
   @override
   Widget build(BuildContext context) {
     ArsenalListPageController c = Get.find<ArsenalListPageController>();
@@ -156,7 +161,13 @@ class ArsenalGridWidget extends StatelessWidget {
       itemCount: c.arsenalModels.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 0, crossAxisSpacing: 0, childAspectRatio: 1.05),
       itemBuilder: (BuildContext context, int index) {
-        return Padding(padding: const EdgeInsets.only(right: 10, left: 10, top: 10, bottom: 0), child: ArsenalListGridItem(index: index));
+        return Padding
+          (padding: const EdgeInsets.only(right: 10, left: 10, top: 10, bottom: 0),
+            child: GestureDetector(
+              onTap: _onTap,
+              child: ArsenalListGridItem(index: index),
+            )
+        );
       },
       controller: sController,
     );
@@ -368,7 +379,7 @@ class ArsenalMenuList extends StatelessWidget {
                               c.arsenalLeftMenuModels[index].title,
                               style: TextStyle(color: c.arsenalLeftMenuModels[index].isSelect ? Colors.red[400] : Colors.black),
                             ),
-                            trailing: (c.menuSelectCurrentIndex == 0 && index != 0) ? const Icon(Icons.arrow_right) : null,
+                            trailing: const Icon(Icons.arrow_right) ,
                             onTap: () => _handleLeftTap(index),
                           ));
                         }))),
@@ -402,7 +413,6 @@ class HorSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ArsenalListPageController c = Get.find<ArsenalListPageController>();
     return SizedBox(
       height: height,
       child: Stack(
@@ -443,7 +453,7 @@ class SelectWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _handleOnTap,
-      child: Obx(() => Center(child: Text(title, style: TextStyle(fontSize: 15, color: c.menuTitles[index].isSelect ? Colors.red[400] : Colors.black)))) ,
+      child: Obx(() => Center(child: Text(title, style: TextStyle(fontSize: 15, color: c.menuTitles[index].isSelect ? Colors.red[400] : Colors.black)))),
     );
   }
 }

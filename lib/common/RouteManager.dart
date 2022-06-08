@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 import 'package:com_3gtt_jsxw/pages/tabbar/arsenal/ArsenalListPage.dart';
 import 'package:com_3gtt_jsxw/pages/tabbar/arsenal/AllArsenalListPage.dart';
 import 'package:com_3gtt_jsxw/pages/JSHomePage.dart';
+import 'package:com_3gtt_jsxw/pages/tabbar/arsenal/ArsenalDesPage.dart';
 
+import '../pages/feedback/FeedBackPage.dart';
 class RouteManager {
 
   static Map<String, WidgetBuilder> getRoutes() {
@@ -12,7 +14,9 @@ class RouteManager {
       '/' : (context) => const JSHomePage(),
       "/ArsenalListPage" : (context) => const ArsenalListPage(),
       "/AllArsenalListPage" : (context) => const AllArsenalListPage(),
-      "/SearchArsenalPage" : (context) => SearchArsenalPage(),
+      "/SearchArsenalPage" : (context) => const SearchArsenalPage(),
+      "/ArsenalDesPage" : (context) => const ArsenalDesPage(),
+      "/FeedBackPage" : (context) => const FeedBackPage(),
     };
   }
 
@@ -27,5 +31,14 @@ class RouteManager {
   static void jumpSearchArsenalPage([var arguments]) {
     Get.toNamed("/SearchArsenalPage", arguments:  arguments);
   }
+
+  static void jumpArsenalDesPage([var arguments]) {
+    Get.toNamed("/ArsenalDesPage", arguments: arguments);
+  }
+
+  static void jumpFeedBackPage([var arguments]) {
+    Get.toNamed("/FeedBackPage", arguments: arguments);
+  }
+
 
 }

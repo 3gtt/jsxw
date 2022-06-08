@@ -120,6 +120,9 @@ flutter:
   - packages/com_3gtt_jsxw/assets/images/country/ukraine_s.png
   - packages/com_3gtt_jsxw/assets/images/country/united_kingdom_s.png
   - packages/com_3gtt_jsxw/assets/images/country/vietnam_s.png
+  - packages/com_3gtt_jsxw/assets/images/navigationbar/navi_collect.png
+  - packages/com_3gtt_jsxw/assets/images/navigationbar/navi_collect_select.png
+  - packages/com_3gtt_jsxw/assets/images/navigationbar/navi_more.png
   - packages/com_3gtt_jsxw/assets/images/tabbar/tabbar_1.png
   - packages/com_3gtt_jsxw/assets/images/tabbar/tabbar_2.png
   - packages/com_3gtt_jsxw/assets/images/tabbar/tabbar_3.png

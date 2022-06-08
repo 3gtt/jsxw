@@ -464,6 +464,18 @@ class _R_Image_AssetResource {
   // ignore: non_constant_identifier_names
   final vietnam_s = const AssetResource("assets/images/country/vietnam_s.png", packageName: R.package);
 
+  /// asset: lib/assets/images/navigationbar/navi_collect.png
+  // ignore: non_constant_identifier_names
+  final navi_collect = const AssetResource("assets/images/navigationbar/navi_collect.png", packageName: R.package);
+
+  /// asset: lib/assets/images/navigationbar/navi_collect_select.png
+  // ignore: non_constant_identifier_names
+  final navi_collect_select = const AssetResource("assets/images/navigationbar/navi_collect_select.png", packageName: R.package);
+
+  /// asset: lib/assets/images/navigationbar/navi_more.png
+  // ignore: non_constant_identifier_names
+  final navi_more = const AssetResource("assets/images/navigationbar/navi_more.png", packageName: R.package);
+
   /// asset: lib/assets/images/tabbar/tabbar_1.png
   // ignore: non_constant_identifier_names
   final tabbar_1 = const AssetResource("assets/images/tabbar/tabbar_1.png", packageName: R.package);
@@ -1074,6 +1086,24 @@ class _R_Image {
   // ignore: non_constant_identifier_names
   AssetImage vietnam_s() {
     return AssetImage(asset.vietnam_s.keyName);
+  }
+
+  /// asset: lib/assets/images/navigationbar/navi_collect.png
+  // ignore: non_constant_identifier_names
+  AssetImage navi_collect() {
+    return AssetImage(asset.navi_collect.keyName);
+  }
+
+  /// asset: lib/assets/images/navigationbar/navi_collect_select.png
+  // ignore: non_constant_identifier_names
+  AssetImage navi_collect_select() {
+    return AssetImage(asset.navi_collect_select.keyName);
+  }
+
+  /// asset: lib/assets/images/navigationbar/navi_more.png
+  // ignore: non_constant_identifier_names
+  AssetImage navi_more() {
+    return AssetImage(asset.navi_more.keyName);
   }
 
   /// asset: lib/assets/images/tabbar/tabbar_1.png
