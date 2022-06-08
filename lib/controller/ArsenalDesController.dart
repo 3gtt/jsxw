@@ -1,14 +1,22 @@
 import 'package:get/get.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:screenshot/screenshot.dart';
+
 
 class ArsenalDesController extends GetxController {
   final desTextListModels = <ArsenalDesTextItemModel>[].obs;
   final recommendedModels = <ArsenalDesRecommendedModel>[].obs;
 
+
   @override
   void onInit() {
     super.onInit();
+
     createData();
   }
+
+
+
 
   void createData() {
     desTextListModels.insertAll(0, [

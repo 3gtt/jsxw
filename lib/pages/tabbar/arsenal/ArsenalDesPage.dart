@@ -1,3 +1,4 @@
+import 'package:com_3gtt_jsxw/common/GlobalVariable.dart';
 import 'package:com_3gtt_jsxw/common/RouteManager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -5,27 +6,54 @@ import 'package:com_3gtt_jsxw/r.g.dart';
 import 'package:get/get.dart';
 import 'package:com_3gtt_jsxw/controller/ArsenalDesController.dart';
 import 'package:com_3gtt_jsxw/widgets/HorizontalFullImageWidget.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:screenshot/screenshot.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 
 class ArsenalDesPage extends StatelessWidget {
-  const ArsenalDesPage({Key? key}) : super(key: key);
+  ArsenalDesPage({Key? key}) : super(key: key);
+  final screenshotController = ScreenshotController();
+
+  void screenshot() async {
+
+    final directory = (await getApplicationDocumentsDirectory()).path;
+    int fileName = DateTime.now().microsecondsSinceEpoch;
+    var path = directory;
+    screenshotController.captureAndSave(path, fileName: "{$fileName}.jpg").then((path) {
+      if (path != null){
+        logger.d(path);
+        // Share.shareFiles([value]);
+        ImageGallerySaver.saveFile(path);
+      }
+    } );
+
+  }
 
   @override
   Widget build(BuildContext context) {
+
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
-          middle: Text("运-20"),
+      navigationBar: CupertinoNavigationBar(
+          middle: const Text("运-20"),
           previousPageTitle: "飞行器",
           trailing: SizedBox(
             width: 100,
-            child: ArsenalDesPageTrailing(),
+            child: ArsenalDesPageTrailing(screenshot: screenshot),
           )),
-      child: GetBuilder(init: ArsenalDesController(), builder: (context) => const SafeArea(child: ArsenalDesWidget())),
+      child: GetBuilder(init: ArsenalDesController(), builder: (context) => SafeArea(
+          child: Screenshot(
+            controller: screenshotController ,
+            child: const ArsenalDesWidget(),
+          )
+      )),
     );
   }
 }
 
 class ArsenalDesPageTrailing extends StatefulWidget {
-  const ArsenalDesPageTrailing({Key? key}) : super(key: key);
+   const ArsenalDesPageTrailing({Key? key,required this.screenshot}) : super(key: key);
+   // ignore: prefer_typing_uninitialized_variables
+   final screenshot;
 
   @override
   State<ArsenalDesPageTrailing> createState() => _ArsenalDesPageTrailingState();
@@ -33,6 +61,41 @@ class ArsenalDesPageTrailing extends StatefulWidget {
 
 class _ArsenalDesPageTrailingState extends State<ArsenalDesPageTrailing> {
   var isSelect = false;
+
+  void _showActionSheet(BuildContext context) {
+
+    showCupertinoModalPopup<void>(
+      context: context,
+      builder: (BuildContext context) => CupertinoActionSheet(
+        title: const Text('更多'),
+        cancelButton: TextButton(onPressed: (){Navigator.pop(context);}, child: const Text("取消",)),
+        actions: <CupertinoActionSheetAction>[
+          CupertinoActionSheetAction(
+            onPressed: () {
+              // Navigator.pop(context);
+              Get.offAllNamed("/");
+            },
+            child: const Text('回到首页'),
+          ),
+          CupertinoActionSheetAction(
+            onPressed: () {
+              Navigator.pop(context);
+              widget.screenshot();
+            },
+            child: const Text('保存长图'),
+          ),
+          CupertinoActionSheetAction(
+            onPressed: () {
+              Navigator.pop(context);
+              Get.toNamed("/WebViewPage");
+            },
+            child: const Text('百度搜索'),
+          )
+        ],
+      ),
+    );
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +115,9 @@ class _ArsenalDesPageTrailingState extends State<ArsenalDesPageTrailing> {
         CupertinoButton(
           padding: const EdgeInsets.only(right: 0),
           alignment: Alignment.centerRight,
-          onPressed: () {},
+          onPressed: () {
+            _showActionSheet(context);
+          },
           child: Image(image: R.image.navi_more(), color: Colors.blue),
         ),
       ],
@@ -84,7 +149,7 @@ class ArsenalDesWidget extends StatelessWidget {
                 ),
               )),
           for (var element in c.desTextListModels) ArsenalDesTextItem(desModel: element),
-          const Padding(padding: const EdgeInsets.only(left: 10, right: 10, bottom: 5, top: 10), child: RecommendedItemBox())
+          const Padding(padding: EdgeInsets.only(left: 10, right: 10, bottom: 5, top: 10), child: RecommendedItemBox())
         ],
       ),
     ));
@@ -133,7 +198,7 @@ class ArsenalDesTextItem extends StatelessWidget {
                 const Spacer(),
                 Padding(
                     padding: const EdgeInsets.only(right: 10),
-                    child:  GestureDetector(onTap: _handleTap, child: Text("纠错", style: TextStyle(color: Colors.black)) ,
+                    child:  GestureDetector(onTap: _handleTap, child: const Text("纠错", style: TextStyle(color: Colors.black)) ,
                     )),
               ],
             ),
@@ -141,9 +206,9 @@ class ArsenalDesTextItem extends StatelessWidget {
               padding: const EdgeInsets.only(left: 10, right: 10),
               child: Container(
                 color: Colors.grey[300],
-                child: Text(""),
                 height: 1,
                 width: double.infinity,
+                child: const Text(""),
               ),
             ),
             Visibility(
@@ -221,7 +286,7 @@ class RecommendedItemBox extends StatelessWidget {
                 color: Colors.grey[300],
                 height: 1,
                 width: double.infinity,
-                child: Text(""),
+                child: const Text(""),
               ),
             ),
             Row(
