@@ -1,0 +1,42 @@
+{
+  "item": [
+    {
+      "title": "全部飞行器"
+    },
+    {
+      "title": "机长",
+      "key": "subtype",
+      "value": "战斗机"
+    },
+    {
+      "title": "翼展",
+      "key": "subtype",
+      "value": "攻击机"
+    },
+    {
+      "title": "机高",
+      "key": "subtype",
+      "value": "轰炸机"
+    },
+    {
+      "title": "空重",
+      "key": "subtype",
+      "value": "教练机"
+    },
+    {
+      "title": "最大起飞重量",
+      "key": "subtype",
+      "value": "预警机"
+    },
+    {
+      "title": "最大飞行速度",
+      "key": "subtype",
+      "value": "侦察机"
+    },
+    {
+      "title": "最大航程",
+      "key": "subtype",
+      "value": "反潜机"
+    }
+  ]
+}

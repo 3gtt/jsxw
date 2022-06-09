@@ -1,8 +1,11 @@
+
 import 'package:com_3gtt_jsxw/pages/tabbar/arsenal/SearchArsenalPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:com_3gtt_jsxw/pages/tabbar/arsenal/ArsenalListPage.dart';
 import 'package:com_3gtt_jsxw/pages/tabbar/arsenal/AllArsenalListPage.dart';
+import 'package:com_3gtt_jsxw/pages/ranklistpage/RankListPage.dart';
+import 'package:com_3gtt_jsxw/pages/ranklistpage/RankLevelListPage.dart';
 import 'package:com_3gtt_jsxw/pages/JSHomePage.dart';
 import 'package:com_3gtt_jsxw/pages/tabbar/arsenal/ArsenalDesPage.dart';
 import '../pages/feedback/FeedBackPage.dart';
@@ -18,6 +21,8 @@ class RouteManager {
       "/ArsenalDesPage" : (context) => ArsenalDesPage(),
       "/FeedBackPage" : (context) => const FeedBackPage(),
       "/WebViewPage" : (context) => const WebViewPage(),
+      "/RankListPage" : (context) => const RankListPage(),
+      "/RankLevelListPage" : (context) => const RankLevelListPage(),
     };
   }
 
@@ -41,5 +46,12 @@ class RouteManager {
     Get.toNamed("/FeedBackPage", arguments: arguments);
   }
 
+  static void jumpRankListPage([var arguments]) {
+    Get.toNamed("/RankListPage", arguments: arguments);
+  }
+
+  static void jumpRankLevelListPage([var arguments]) {
+    Get.toNamed("/RankLevelListPage", arguments: arguments);
+  }
 
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// 这是个比较复杂widget 解决一些特殊场景(比如Colum)无法使image宽度最大化的问题
 class HorizontalFullImageWidget extends StatefulWidget {
   const HorizontalFullImageWidget(
       {Key? key, required this.index, required this.title})
@@ -24,8 +23,8 @@ class _HorizontalFullImageWidgetState extends State<HorizontalFullImageWidget> {
           Expanded(
               flex: 1,
               child: Stack(
-                fit: StackFit.passthrough,
                 alignment: Alignment.center,
+                fit: StackFit.passthrough,
                 children: [
                   Image(
                       fit: BoxFit.fill,
@@ -38,8 +37,7 @@ class _HorizontalFullImageWidgetState extends State<HorizontalFullImageWidget> {
                         alignment: Alignment.bottomCenter
                     ),
                   ),
-                  HorizontalFullTextWidget(title: widget.title,
-                    alignment: Alignment.bottomCenter,)
+                  HorizontalFullTextWidget(alignment: Alignment.bottomCenter, title: widget.title)
                 ],
               )),
         ],
@@ -50,7 +48,7 @@ class _HorizontalFullImageWidgetState extends State<HorizontalFullImageWidget> {
 
 class HorizontalFullTextWidget extends StatelessWidget {
   const HorizontalFullTextWidget(
-      {Key? key, this.alignment = Alignment.topLeft, required this.title})
+      {Key? key,  this.alignment = Alignment.topLeft, required this.title})
       : super(key: key);
   final Alignment alignment;
   final String title;
@@ -60,8 +58,8 @@ class HorizontalFullTextWidget extends StatelessWidget {
     return Align(
       alignment: alignment,
       child: Text(
-          textAlign: TextAlign.center,
           title,
+          textAlign: TextAlign.center,
           style: const TextStyle(color: Colors.white, fontSize: 17)),
     );
   }

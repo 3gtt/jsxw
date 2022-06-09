@@ -1,0 +1,92 @@
+{
+  "cf_items": [
+    {
+      "cf_accessorytype": 1,
+      "cf_controller_hidebottombar": true,
+      "cf_controller_class": "WeaponsRankController",
+      "cf_controller_param": {
+        "maintype": "aircraft",
+        "title": "飞行器排行榜"
+      },
+      "cf_title": "飞行器",
+      "cf_icon": "dir_res/dir_homeicon/icon_101"
+    },
+    {
+      "cf_accessorytype": 1,
+      "cf_controller_hidebottombar": true,
+      "cf_controller_class": "WeaponsRankController",
+      "cf_controller_param": {
+        "maintype": "warship",
+        "title": "舰船舰艇排行榜"
+      },
+      "cf_title": "舰船舰艇",
+      "cf_icon": "dir_res/dir_homeicon/icon_102"
+    },
+    {
+      "cf_accessorytype": 1,
+      "cf_controller_hidebottombar": true,
+      "cf_controller_class": "WeaponsRankController",
+      "cf_controller_param": {
+        "maintype": "guns",
+        "title": "枪械与单兵排行榜"
+      },
+      "cf_title": "枪械与单兵",
+      "cf_icon": "dir_res/dir_homeicon/icon_103"
+    },
+    {
+      "cf_accessorytype": 1,
+      "cf_controller_hidebottombar": true,
+      "cf_controller_class": "WeaponsRankController",
+      "cf_controller_param": {
+        "maintype": "tank",
+        "title": "坦克装甲车辆排行榜"
+      },
+      "cf_title": "坦克装甲车辆",
+      "cf_icon": "dir_res/dir_homeicon/icon_104"
+    },
+    {
+      "cf_accessorytype": 1,
+      "cf_controller_hidebottombar": true,
+      "cf_controller_class": "WeaponsRankController",
+      "cf_controller_param": {
+        "maintype": "artillery",
+        "title": "火炮排行榜"
+      },
+      "cf_title": "火炮",
+      "cf_icon": "dir_res/dir_homeicon/icon_105"
+    },
+    {
+      "cf_accessorytype": 1,
+      "cf_controller_hidebottombar": true,
+      "cf_controller_class": "WeaponsRankController",
+      "cf_controller_param": {
+        "maintype": "missile",
+        "title": "导弹武器排行榜"
+      },
+      "cf_title": "导弹武器",
+      "cf_icon": "dir_res/dir_homeicon/icon_106"
+    },
+    {
+      "cf_accessorytype": 1,
+      "cf_controller_hidebottombar": true,
+      "cf_controller_class": "WeaponsRankController",
+      "cf_controller_param": {
+        "maintype": "spaceship",
+        "title": "太空装备排行榜"
+      },
+      "cf_title": "太空装备",
+      "cf_icon": "dir_res/dir_homeicon/icon_107"
+    },
+    {
+      "cf_accessorytype": 1,
+      "cf_controller_hidebottombar": true,
+      "cf_controller_class": "WeaponsRankController",
+      "cf_controller_param": {
+        "maintype": "explosive",
+        "title": "爆炸物排行榜"
+      },
+      "cf_title": "爆炸物",
+      "cf_icon": "dir_res/dir_homeicon/icon_108"
+    }
+  ]
+}

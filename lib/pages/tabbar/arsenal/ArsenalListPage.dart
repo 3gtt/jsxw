@@ -7,6 +7,8 @@ import 'package:com_3gtt_jsxw/widgets/HorizontalFullImageWidget.dart';
 import 'package:com_3gtt_jsxw/widgets/LoadingMoreWidget.dart';
 import 'package:com_3gtt_jsxw/common/RouteManager.dart';
 
+import '../../../model/custom/hor_selector_model.dart';
+
 class ArsenalListPage extends StatelessWidget {
   const ArsenalListPage({Key? key}) : super(key: key);
 
@@ -18,7 +20,7 @@ class ArsenalListPage extends StatelessWidget {
         middle: Text(Get.arguments ?? ""),
       ),
       backgroundColor: CupertinoColors.systemBackground,
-      child: GetBuilder(init: ArsenalListPageController(), id: "111", builder: (context) => const ArsenalContainer()),
+      child: GetBuilder(init: ArsenalListPageController(), builder: (context) => const ArsenalContainer()),
     );
   }
 }
@@ -83,6 +85,7 @@ class _ArsenalContainerState extends State<ArsenalContainer> {
         bottom: false,
         child: Column(
           children: [
+            // ignore: invalid_use_of_protected_member
             Obx(() => HorSelector(listTitle: c.menuTitles.value)),
             Expanded(
               child: Stack(

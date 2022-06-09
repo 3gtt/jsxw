@@ -5,6 +5,8 @@ import 'package:com_3gtt_jsxw/r.g.dart';
 import 'package:com_3gtt_jsxw/model/aircraft_model.dart';
 import 'package:com_3gtt_jsxw/model/aircraft_time_model.dart';
 
+import '../model/custom/hor_selector_model.dart';
+
 class ArsenalListPageController extends GetxController {
   // 初始值为1000 不让选中的状态
   static const noSelectedCount = 0;
@@ -283,15 +285,6 @@ extension TimeMenuShow on ArsenalListPageController {
     menuTitles[menuSelectCurrentIndex.value].title = timeModels[timeCurrentIndex].title;
   }
 
-}
-
-
-class HorSelectorModel {
-  HorSelectorModel({this.title});
-
-  var currentIndex = ArsenalListPageController.noSelectedCount;
-  bool isSelect = false;
-  String? title;
 }
 
 class ArsenalGridModel {

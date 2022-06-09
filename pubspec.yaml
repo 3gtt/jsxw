@@ -1,3 +1,4 @@
+include: package:lints/recommended.yaml
 name: com_3gtt_jsxw
 description: A new Flutter project.
 publish_to: none
@@ -136,6 +137,8 @@ flutter:
   - packages/com_3gtt_jsxw/assets/texts/aircraft.json
   - packages/com_3gtt_jsxw/assets/texts/arsenalTime.json
   - packages/com_3gtt_jsxw/assets/texts/arsenalmenu.json
+  - packages/com_3gtt_jsxw/assets/texts/parameter.json
+  - packages/com_3gtt_jsxw/assets/texts/ranklist.json
   - packages/com_3gtt_jsxw/assets/texts/weapons_home.json
   - packages/com_3gtt_jsxw/assets/texts/Aircraft.json
 flutter_intl:
@@ -148,3 +151,6 @@ flr:
   - lib/assets/texts
   fonts:
   - lib/assets/fonts
+linter:
+  rules:
+    non_constant_identifier_names: false

@@ -15,7 +15,7 @@ class MilitaryOnlineTabPage extends StatelessWidget {
 }
 
 class GridListDemo extends StatelessWidget {
-  const GridListDemo({super.key});
+  const GridListDemo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class GridListDemo extends StatelessWidget {
 }
 
 class HorSelector extends StatelessWidget {
-  const HorSelector({Key? key, required this.listTitle, this.height = 40})
+  const HorSelector({Key? key, this.height = 40, required this.listTitle, })
       : super(key: key);
   final double height;
   final List<String> listTitle;
@@ -43,8 +43,8 @@ class HorSelector extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(0.5),
             child: CustomPaint(
-              painter: HorLinePainter(count: 3),
               size: Size(MediaQuery.of(context).size.width, height),
+              painter: HorLinePainter(count: 3),
             ),
           ),
           Flex(direction: Axis.horizontal, children: [
@@ -58,7 +58,7 @@ class HorSelector extends StatelessWidget {
 }
 
 class SelectWidget extends StatelessWidget {
-  SelectWidget({Key? key, required this.title, this.isHighlighted = false})
+  SelectWidget({Key? key,  this.isHighlighted = false, required this.title,})
       : super(key: key);
   final String title;
   final bool isHighlighted;

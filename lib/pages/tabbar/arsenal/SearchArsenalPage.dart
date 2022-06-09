@@ -1,4 +1,3 @@
-import 'package:com_3gtt_jsxw/common/GlobalVariable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

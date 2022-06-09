@@ -1,8 +1,10 @@
 import 'package:com_3gtt_jsxw/pages/tabbar/MilitaryOnlineTabPage.dart';
+import 'package:com_3gtt_jsxw/pages/tabbar/more/MorePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:com_3gtt_jsxw/generated/l10n.dart';
 import 'package:com_3gtt_jsxw/r.g.dart';
 import 'package:com_3gtt_jsxw/pages/tabbar/arsenal/ArsenalTabPage.dart';
+import 'package:com_3gtt_jsxw/pages/ranklistpage/RankListPage.dart';
 
 class _TabInfo {
   const _TabInfo(this.title, this.img);
@@ -63,7 +65,16 @@ class _JSHomePageState extends State<JSHomePage> {
           // 根据不同的index 生成不同的page
           tabBuilder: (BuildContext context, int index) {
             return CupertinoTabView(
-              builder: (context) => index != 1 ? MilitaryOnlineTabPage() : ArsenalTabPage(),
+              builder: (context) {
+                if (index == 0){
+                  return const MilitaryOnlineTabPage();
+                } else if (index == 1){
+                  return const ArsenalTabPage();
+                } else if (index == 2) {
+                  return const RankListPage();
+                }
+                return const MorePage();
+              },
               defaultTitle: tabInfos[index].title,
             );
           },

@@ -518,6 +518,14 @@ class _R_Text_AssetResource {
   // ignore: non_constant_identifier_names
   final arsenalmenu_json = const AssetResource("assets/texts/arsenalmenu.json", packageName: R.package);
 
+  /// asset: lib/assets/texts/parameter.json
+  // ignore: non_constant_identifier_names
+  final parameter_json = const AssetResource("assets/texts/parameter.json", packageName: R.package);
+
+  /// asset: lib/assets/texts/ranklist.json
+  // ignore: non_constant_identifier_names
+  final ranklist_json = const AssetResource("assets/texts/ranklist.json", packageName: R.package);
+
   /// asset: lib/assets/texts/weapons_home.json
   // ignore: non_constant_identifier_names
   final weapons_home_json = const AssetResource("assets/texts/weapons_home.json", packageName: R.package);
@@ -1170,6 +1178,20 @@ class _R_Text {
   // ignore: non_constant_identifier_names
   Future<String> arsenalmenu_json() {
     final str = rootBundle.loadString(asset.arsenalmenu_json.keyName);
+    return str;
+  }
+
+  /// asset: lib/assets/texts/parameter.json
+  // ignore: non_constant_identifier_names
+  Future<String> parameter_json() {
+    final str = rootBundle.loadString(asset.parameter_json.keyName);
+    return str;
+  }
+
+  /// asset: lib/assets/texts/ranklist.json
+  // ignore: non_constant_identifier_names
+  Future<String> ranklist_json() {
+    final str = rootBundle.loadString(asset.ranklist_json.keyName);
     return str;
   }
 
