@@ -1,123 +1,292 @@
-import 'package:com_3gtt_jsxw/common/GlobalVariable.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:com_3gtt_jsxw/common/RouteManager.dart';
+import 'package:com_3gtt_jsxw/model/new_list_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
+import '../../../controller/MilitaryOnlineController.dart';
+import '../../common/GlobalVariable.dart';
+import '../../widgets/PageSubViewCacheWidget.dart';
 
 class MilitaryOnlineTabPage extends StatelessWidget {
   const MilitaryOnlineTabPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return const CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(),
-      backgroundColor: CupertinoColors.systemBackground,
-      child: GridListDemo(),
+    return CupertinoPageScaffold(
+        navigationBar: const CupertinoNavigationBar(),
+        backgroundColor: CupertinoColors.systemBackground,
+        child: SafeArea(
+          child: Material(
+            child: GetBuilder(init: MilitaryOnlineController(), builder: (context) => ControlAndPageView()),
+          ),
+        )
     );
   }
 }
 
-class GridListDemo extends StatelessWidget {
-  const GridListDemo({Key? key}) : super(key: key);
+// ignore: must_be_immutable
+class ControlAndPageView extends StatelessWidget {
+  ControlAndPageView({Key? key}) : super(key: key);
+  final controlKey = GlobalKey<ControlWidgetState>();
+  MilitaryOnlineController c = Get.find<MilitaryOnlineController>();
+
+
+  void _pageCurrentChangeIndex(int index) {
+    c.currentIndex.value = index;
+    controlKey.currentState?.jumpTo(index);
+  }
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Column(
-      children:const [
-         HorSelector(listTitle: ["全部国家", "全部舰船舰艇", "全部时间"]),
+    PageController controller = PageController();
+
+    return Column(
+      children: [
+        ControlWidget(
+            key: controlKey,
+            controlTitles: const ["推荐", "热点", "军事", "文章", "历史"],
+            valueChanged: (index) {
+              c.currentIndex.value = index;
+              controller.jumpToPage(index);
+            }),
+        Expanded(child: PageViewWidget(count: 5, controller: controller, pageCurrentChangeIndex: _pageCurrentChangeIndex)),
       ],
-    ));
+    );
   }
 }
 
-class HorSelector extends StatelessWidget {
-  const HorSelector({Key? key, this.height = 40, required this.listTitle, })
-      : super(key: key);
-  final double height;
-  final List<String> listTitle;
+class PageViewWidget extends StatefulWidget {
+  const PageViewWidget({Key? key, required this.count, required this.controller, required this.pageCurrentChangeIndex}) : super(key: key);
+  final int count;
+  final PageController controller;
+  final ValueChanged<int> pageCurrentChangeIndex;
+
+  @override
+  State<PageViewWidget> createState() => _PageViewWidgetState();
+}
+
+class _PageViewWidgetState extends State<PageViewWidget> {
+  MilitaryOnlineController c = Get.find<MilitaryOnlineController>();
+  @override
+  Widget build(BuildContext context) {
+    var children = <Widget>[];
+    for (var i = 0; i < widget.count; i++) {
+      children.add(KeepAliveWrapper(child: Obx(() => PageListWidget(data: c.newListModels[i]))));
+    }
+    return PageView(
+        controller: widget.controller,
+        onPageChanged: (index) {
+          widget.pageCurrentChangeIndex(index);
+        },
+        children: children
+    );
+  }
+}
+
+/// 这个是pageview中的界面
+class PageListWidget extends StatefulWidget {
+  const PageListWidget({Key? key, required this.data}) : super(key: key);
+  final Data? data;
+  @override
+  State<PageListWidget> createState() => _PageListWidgetState();
+}
+
+class _PageListWidgetState extends State<PageListWidget> {
+  final RefreshController _refreshController = RefreshController(initialRefresh: true);
+  MilitaryOnlineController c = Get.find<MilitaryOnlineController>();
+
+  /// 下拉刷新
+  void _onRefresh() {
+      c.request(c.currentIndex.value, false, (e){
+        c.newListModels.refresh();
+        _refreshController.refreshCompleted();
+      });
+  }
+  ///上拉加载
+  void _onLoading() {
+    c.request(c.currentIndex.value, true,(e){
+      c.newListModels.refresh();
+      _refreshController.loadComplete();
+    });
+  }
+
+  void _handleTap(int index) {
+      RouteManager.jumpNewListDesPage(index);
+  }
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: height,
-      child: Stack(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(0.5),
-            child: CustomPaint(
-              size: Size(MediaQuery.of(context).size.width, height),
-              painter: HorLinePainter(count: 3),
+    return SmartRefresher(
+        enablePullDown: true,
+        enablePullUp: true,
+        header: const ClassicHeader(),
+        footer: const ClassicFooter(),
+        controller: _refreshController,
+        onLoading: _onLoading,
+        onRefresh: _onRefresh,
+        child: ListView.separated(
+          cacheExtent: 110,
+          itemCount: widget.data?.newsLists.length ?? 0,
+            itemBuilder: (context, index) {
+              return ListTile(
+                onTap: () => _handleTap(index),
+                  dense: true,
+                  contentPadding: const EdgeInsets.all(0),
+                  title: MOListItem(newslist: widget.data?.newsLists[index]),
+              );
+            }, separatorBuilder: (BuildContext context, int index) {
+            return Divider(indent: 15, color: Colors.grey[400],);
+        },
+        ),
+    );
+  }
+}
+
+
+class MOListItem extends StatelessWidget {
+  const MOListItem({Key? key, required this.newslist}) : super(key: key);
+  final NewsLists? newslist;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: const EdgeInsets.all(15),
+      child: SizedBox(
+        width: double.infinity,
+        child: Row(
+          children: [
+            SizedBox(
+              height: 80,
+              child: AspectRatio(
+                  aspectRatio: 400 / 263.0,
+                  child: Image(fit: BoxFit.fill, image: CachedNetworkImageProvider(newslist?.picList.first ?? "")),
+              ),
             ),
-          ),
-          Flex(direction: Axis.horizontal, children: [
-            for (String title in listTitle)
-              Expanded(flex: 1, child: SelectWidget(title: title))
-          ])
-        ],
+
+            Expanded(
+                child: SizedBox(height: 80, child: Stack(
+                  children: [
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Padding(
+                          padding: const EdgeInsets.only(left: 10,),
+                          child: SizedBox(width: double.infinity, child: Text(newslist?.title ?? "", style: const TextStyle(fontSize: 19), maxLines: 2, overflow: TextOverflow.ellipsis),)
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Padding(padding: const EdgeInsets.only(left: 10), child: Text(newslist?.timeAgo ?? "", style: const TextStyle(fontSize: 10),),),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: Padding(padding: const EdgeInsets.only(left: 10), child: Text("${newslist?.commentNum ?? ""}评论", style: TextStyle(fontSize: 10, color: Colors.grey[500]))),
+                    ),
+                  ],
+                ),)
+            )
+
+          ],
+        ),
       ),
     );
+
   }
 }
 
-class SelectWidget extends StatelessWidget {
-  SelectWidget({Key? key,  this.isHighlighted = false, required this.title,})
-      : super(key: key);
-  final String title;
-  final bool isHighlighted;
+/// 这个是分栏控制器
+// ignore: must_be_immutable
+class ControlWidget extends StatefulWidget {
+  const ControlWidget({
+    Key? key,
+    this.controlTitles,
+    this.valueChanged,
+    this.textStyle,
+    this.selectTextStyle,
+    this.sliderColor,
+  }) : super(key: key);
 
-  void _handleOnTap() {
-      logger.d('点击事件');
+  final List<String>? controlTitles;
+  final ValueChanged<int>? valueChanged;
+  final TextStyle? textStyle;
+  final TextStyle? selectTextStyle;
+  final Color? sliderColor;
+
+  @override
+  State<ControlWidget> createState() => ControlWidgetState();
+
+  void valueChange(int index) {
+    if (valueChanged != null) {
+      valueChanged!(index);
+    }
+  }
+}
+
+class ControlWidgetState extends State<ControlWidget> {
+  int currentIndex = 0;
+
+  void jumpTo(int index) {
+    _refresh(index);
+  }
+
+  void _handleTap(int index) {
+    widget.valueChange(index);
+    _refresh(index);
+  }
+
+  void _refresh(int index) {
+    setState(() {
+      currentIndex = index;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: _handleOnTap,
-      child: Center(
-          child: Text(title,
-              style: TextStyle(
-                  fontSize: 15,
-                  color:
-                      isHighlighted ? Colors.red[400] : Colors.black))),
-    );
-  }
-}
+    final textStyle = widget.textStyle ?? const TextStyle(fontSize: 16, color: Colors.black);
+    final selectTextStyle = widget.selectTextStyle ?? const TextStyle(fontSize: 16, color: Colors.red);
+    final sliderColor = widget.sliderColor ?? Colors.red;
 
-class HorLinePainter extends CustomPainter {
-  const HorLinePainter({required this.count}) : super();
-  final int count;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    var rect = Offset.zero & size;
-    drawHorLine(canvas, rect);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
-
-  void drawHorLine(Canvas canvas, Rect rect) {
-    var paint = Paint();
-    paint.isAntiAlias = true;
-    paint.style = PaintingStyle.fill; //填充
-    paint.color = Colors.white;
-    canvas.drawRect(rect, paint);
-
-    // line
-    paint.style = PaintingStyle.stroke;
-    paint.color = Colors.grey[400] ?? Colors.grey;
-    paint.strokeWidth = 0.5;
-    canvas.drawLine(
-        Offset(rect.left, rect.top), Offset(rect.right, rect.top), paint);
-    canvas.drawLine(
-        Offset(rect.left, rect.bottom), Offset(rect.right, rect.bottom), paint);
-
-    for (int i = 1; i <= count; i++) {
-      if (i == count) {
-        continue;
-      }
-      final double dx = (rect.size.width / 3) * i - 0.25;
-      final double dy1 = (rect.size.height) / 4;
-      final double dy2 = (rect.size.height) / 4 * 3;
-      canvas.drawLine(Offset(dx, dy1), Offset(dx, dy2), paint);
+    var children = <Widget>[];
+    for (var i = 0; i < (widget.controlTitles?.length ?? 0); i++) {
+      children.add(Expanded(
+          child: GestureDetector(
+              onTap: () => _handleTap(i),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 15, bottom: 15),
+                child: Text(
+                  widget.controlTitles?[i] ?? "",
+                  style: (i == currentIndex) ? selectTextStyle : textStyle,
+                  textAlign: TextAlign.center,
+                ),
+              ))));
     }
+
+    final itemWidth = (Get.size.width / children.length);
+    final itemTextWidth = boundingTextSize(widget.controlTitles?[0] ?? "", textStyle).width;
+    final itemDx = (itemWidth / 2) - (itemTextWidth / 2) + (currentIndex * itemWidth);
+
+    return SizedBox(
+        width: double.infinity,
+        height: 50,
+        child: Stack(
+          children: [
+            const Positioned(left: 0, top: -0.6, right: 0, child: Divider(height: 1, color: Colors.black54)),
+            Row(
+              children: children,
+            ),
+            const Positioned(left: 0, bottom: 1, right: 0, child: Divider(height: 1, color: Colors.black54)),
+            AnimatedPositioned(
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeIn,
+              left: itemDx,
+              bottom: 2,
+              child: Container(
+                color: sliderColor,
+                width: itemTextWidth,
+                height: 2,
+              ),
+            ),
+          ],
+        ));
   }
 }

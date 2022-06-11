@@ -9,6 +9,8 @@ import 'package:com_3gtt_jsxw/pages/ranklistpage/RankLevelListPage.dart';
 import 'package:com_3gtt_jsxw/pages/JSHomePage.dart';
 import 'package:com_3gtt_jsxw/pages/tabbar/arsenal/ArsenalDesPage.dart';
 import '../pages/feedback/FeedBackPage.dart';
+import '../pages/tabbar/NewListDesPage.dart';
+import '../pages/tabbar/more/WeaponsReadLogPage.dart';
 import '../pages/webwidget/WebViewPage.dart';
 class RouteManager {
 
@@ -23,6 +25,8 @@ class RouteManager {
       "/WebViewPage" : (context) => const WebViewPage(),
       "/RankListPage" : (context) => const RankListPage(),
       "/RankLevelListPage" : (context) => const RankLevelListPage(),
+      "/WeaponsReadLogPage" : (context) => WeaponsReadLogPage(),
+      "/NewListDesPage" : (context) => const NewListDesPage(),
     };
   }
 
@@ -54,4 +58,11 @@ class RouteManager {
     Get.toNamed("/RankLevelListPage", arguments: arguments);
   }
 
+  static void jumpWeaponsReadLogPage([var arguments]) {
+    Get.toNamed("/WeaponsReadLogPage", arguments: arguments);
+  }
+
+  static void jumpNewListDesPage([var arguments]) {
+    Get.toNamed("/NewListDesPage", arguments: arguments);
+  }
 }

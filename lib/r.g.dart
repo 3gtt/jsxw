@@ -464,6 +464,42 @@ class _R_Image_AssetResource {
   // ignore: non_constant_identifier_names
   final vietnam_s = const AssetResource("assets/images/country/vietnam_s.png", packageName: R.package);
 
+  /// asset: lib/assets/images/lcweb_forword.png
+  // ignore: non_constant_identifier_names
+  final lcweb_forword = const AssetResource("assets/images/lcweb_forword.png", packageName: R.package);
+
+  /// asset: lib/assets/images/more/mine_apps.png
+  // ignore: non_constant_identifier_names
+  final mine_apps = const AssetResource("assets/images/more/mine_apps.png", packageName: R.package);
+
+  /// asset: lib/assets/images/more/mine_download.png
+  // ignore: non_constant_identifier_names
+  final mine_download = const AssetResource("assets/images/more/mine_download.png", packageName: R.package);
+
+  /// asset: lib/assets/images/more/mine_mark.png
+  // ignore: non_constant_identifier_names
+  final mine_mark = const AssetResource("assets/images/more/mine_mark.png", packageName: R.package);
+
+  /// asset: lib/assets/images/more/mine_pro.png
+  // ignore: non_constant_identifier_names
+  final mine_pro = const AssetResource("assets/images/more/mine_pro.png", packageName: R.package);
+
+  /// asset: lib/assets/images/more/mine_restore.png
+  // ignore: non_constant_identifier_names
+  final mine_restore = const AssetResource("assets/images/more/mine_restore.png", packageName: R.package);
+
+  /// asset: lib/assets/images/more/mine_review.png
+  // ignore: non_constant_identifier_names
+  final mine_review = const AssetResource("assets/images/more/mine_review.png", packageName: R.package);
+
+  /// asset: lib/assets/images/more/mine_share.png
+  // ignore: non_constant_identifier_names
+  final mine_share = const AssetResource("assets/images/more/mine_share.png", packageName: R.package);
+
+  /// asset: lib/assets/images/more/mine_upgrade.png
+  // ignore: non_constant_identifier_names
+  final mine_upgrade = const AssetResource("assets/images/more/mine_upgrade.png", packageName: R.package);
+
   /// asset: lib/assets/images/navigationbar/navi_collect.png
   // ignore: non_constant_identifier_names
   final navi_collect = const AssetResource("assets/images/navigationbar/navi_collect.png", packageName: R.package);
@@ -1094,6 +1130,60 @@ class _R_Image {
   // ignore: non_constant_identifier_names
   AssetImage vietnam_s() {
     return AssetImage(asset.vietnam_s.keyName);
+  }
+
+  /// asset: lib/assets/images/lcweb_forword.png
+  // ignore: non_constant_identifier_names
+  AssetImage lcweb_forword() {
+    return AssetImage(asset.lcweb_forword.keyName);
+  }
+
+  /// asset: lib/assets/images/more/mine_apps.png
+  // ignore: non_constant_identifier_names
+  AssetImage mine_apps() {
+    return AssetImage(asset.mine_apps.keyName);
+  }
+
+  /// asset: lib/assets/images/more/mine_download.png
+  // ignore: non_constant_identifier_names
+  AssetImage mine_download() {
+    return AssetImage(asset.mine_download.keyName);
+  }
+
+  /// asset: lib/assets/images/more/mine_mark.png
+  // ignore: non_constant_identifier_names
+  AssetImage mine_mark() {
+    return AssetImage(asset.mine_mark.keyName);
+  }
+
+  /// asset: lib/assets/images/more/mine_pro.png
+  // ignore: non_constant_identifier_names
+  AssetImage mine_pro() {
+    return AssetImage(asset.mine_pro.keyName);
+  }
+
+  /// asset: lib/assets/images/more/mine_restore.png
+  // ignore: non_constant_identifier_names
+  AssetImage mine_restore() {
+    return AssetImage(asset.mine_restore.keyName);
+  }
+
+  /// asset: lib/assets/images/more/mine_review.png
+  // ignore: non_constant_identifier_names
+  AssetImage mine_review() {
+    return AssetImage(asset.mine_review.keyName);
+  }
+
+  /// asset: lib/assets/images/more/mine_share.png
+  // ignore: non_constant_identifier_names
+  AssetImage mine_share() {
+    return AssetImage(asset.mine_share.keyName);
+  }
+
+  /// asset: lib/assets/images/more/mine_upgrade.png
+  // ignore: non_constant_identifier_names
+  AssetImage mine_upgrade() {
+    return AssetImage(asset.mine_upgrade.keyName);
   }
 
   /// asset: lib/assets/images/navigationbar/navi_collect.png

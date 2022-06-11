@@ -37,8 +37,8 @@ class RankListWidget extends StatelessWidget {
               onTap: () {
                 _handleTap(c.rankListModels[index].cfControllerParam.title);
               },
-              leading: Image(image: R.image.icon_101()),
-              title: Text(c.rankListModels[index].cfTitle),
+              leading: Image(image: AssetImage("packages/com_3gtt_jsxw/assets/images/arsenal/icon_10${index + 1}.png")),
+              title: Text(c.rankListModels[index].cfTitle, style: TextStyle(color: Colors.grey[600]),),
               trailing: const Icon(Icons.arrow_right),
             ),
           );

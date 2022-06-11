@@ -33,7 +33,7 @@ class _FeedBackWidgetState extends State<FeedBackWidget> {
   @override
   void initState() {
     super.initState();
-    _textController.text = Get.arguments;
+    _textController.text = Get.arguments ?? "";
   }
 
   void _sendTap() {

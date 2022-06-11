@@ -26,6 +26,7 @@ dependencies:
   share_plus: ^4.0.7
   image_gallery_saver: ^1.7.1
   webview_flutter: ^3.0.4
+  cached_network_image: ^3.2.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -126,6 +127,15 @@ flutter:
   - packages/com_3gtt_jsxw/assets/images/country/ukraine_s.png
   - packages/com_3gtt_jsxw/assets/images/country/united_kingdom_s.png
   - packages/com_3gtt_jsxw/assets/images/country/vietnam_s.png
+  - packages/com_3gtt_jsxw/assets/images/lcweb_forword.png
+  - packages/com_3gtt_jsxw/assets/images/more/mine_apps.png
+  - packages/com_3gtt_jsxw/assets/images/more/mine_download.png
+  - packages/com_3gtt_jsxw/assets/images/more/mine_mark.png
+  - packages/com_3gtt_jsxw/assets/images/more/mine_pro.png
+  - packages/com_3gtt_jsxw/assets/images/more/mine_restore.png
+  - packages/com_3gtt_jsxw/assets/images/more/mine_review.png
+  - packages/com_3gtt_jsxw/assets/images/more/mine_share.png
+  - packages/com_3gtt_jsxw/assets/images/more/mine_upgrade.png
   - packages/com_3gtt_jsxw/assets/images/navigationbar/navi_collect.png
   - packages/com_3gtt_jsxw/assets/images/navigationbar/navi_collect_select.png
   - packages/com_3gtt_jsxw/assets/images/navigationbar/navi_more.png
