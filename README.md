@@ -1,6 +1,7 @@
 # com_3gtt_jsxw
 
-A new Flutter project.
+高仿军情观察室， 使用纯flutter开发
+主要用于学习产出，如有侵权请联系删除
 
 ## Getting Started
 
