@@ -42,7 +42,7 @@ NewsLists _$NewsListsFromJson(Map<String, dynamic> json) => NewsLists(
       json['title'] as String,
       json['timeAgo'] as String,
       json['newsAbstract'] as String,
-      json['commentNum'].toString(),
+      json['commentNum'],
       json['newsAttribute'] as String,
       json['newsShowType'] as int,
       (json['picList'] as List<dynamic>).map((e) => e as String).toList(),

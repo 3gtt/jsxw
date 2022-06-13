@@ -47,7 +47,7 @@ class MilitaryOnlineController extends GetxController{
       newListModels[index]?.newsLists.removeRange(0, newListModels[index]?.newsLists.length ?? 0);
     }
 
-    try {
+    // try {
       var responds = await Dio().post("http://api.wap.miercn.com/api/apps/index.php", queryParameters : {
         "action" : "newslist",
         "apiCode" : "7",
@@ -71,11 +71,11 @@ class MilitaryOnlineController extends GetxController{
       }
       newListModels[index]?.newsLists.insertAll(newListModels[index]?.newsLists.length ?? 0, data.newsLists);
       callBack(null);
-    }
-    catch (e){
-      callBack(e);
-      Logger().d(e);
-    }
+    // }
+    // catch (e){
+    //   callBack(e);
+    //   Logger().d(e);
+    // }
   }
 
 }

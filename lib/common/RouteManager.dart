@@ -26,7 +26,7 @@ class RouteManager {
       "/RankListPage" : (context) => const RankListPage(),
       "/RankLevelListPage" : (context) => const RankLevelListPage(),
       "/WeaponsReadLogPage" : (context) => WeaponsReadLogPage(),
-      "/NewListDesPage" : (context) => const NewListDesPage(),
+      "/NewListDesPage" : (context) => NewListDesPage(),
     };
   }
 

@@ -21,7 +21,7 @@ class ArsenalDesPage extends StatelessWidget {
     screenshotController.captureAndSave(path, fileName: "{$fileName}.jpg").then((path) {
       if (path != null) {
         logger.d(path);
-        ImageGallerySaver.saveFile(path);
+        ImageGallerySaver.saveFile(path).then((value) => Get.showSnackbar(const GetSnackBar(message: "保存成功", duration: Duration(milliseconds: 2500))));
       }
     });
   }

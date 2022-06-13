@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'new_list_model.g.dart';
@@ -67,7 +68,7 @@ class NewsLists extends Object {
   String newsAbstract;
 
   @JsonKey(name: 'commentNum')
-  String? commentNum;
+  dynamic commentNum;
 
   @JsonKey(name: 'newsAttribute')
   String newsAttribute;

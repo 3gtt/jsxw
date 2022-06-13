@@ -27,6 +27,7 @@ dependencies:
   image_gallery_saver: ^1.7.1
   webview_flutter: ^3.0.4
   cached_network_image: ^3.2.1
+  date_format: ^2.0.6
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -147,8 +148,10 @@ flutter:
   - packages/com_3gtt_jsxw/assets/texts/aircraft.json
   - packages/com_3gtt_jsxw/assets/texts/arsenalTime.json
   - packages/com_3gtt_jsxw/assets/texts/arsenalmenu.json
+  - packages/com_3gtt_jsxw/assets/texts/jshtml.json
   - packages/com_3gtt_jsxw/assets/texts/parameter.json
   - packages/com_3gtt_jsxw/assets/texts/ranklist.json
+  - packages/com_3gtt_jsxw/assets/texts/testhtml.json
   - packages/com_3gtt_jsxw/assets/texts/weapons_home.json
   - packages/com_3gtt_jsxw/assets/texts/Aircraft.json
 flutter_intl:

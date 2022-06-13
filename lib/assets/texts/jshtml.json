@@ -1,0 +1,19 @@
+<script>
+const resizeObserver = new ResizeObserver(entries =>
+Resize.postMessage(document.documentElement.scrollHeight.toString()) )
+resizeObserver.observe(document.body)
+</script>
+<script>
+window.onload =(function(){
+  let imgs = document.getElementsByClassName('image')
+  for (var i=0;i<imgs.length;i++)
+{
+  var src = imgs[i].getAttribute("data-src")
+window.alert(src)
+imgs[i].src = src
+window.alert(imgs[i].getAttribute("src"))
+imgs[i].width = document.documentElement.clientWidth - 30
+}
+})
+
+</script>

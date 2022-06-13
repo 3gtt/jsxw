@@ -4,6 +4,7 @@ import 'package:com_3gtt_jsxw/model/new_list_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:logger/logger.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import '../../../controller/MilitaryOnlineController.dart';
 import '../../common/GlobalVariable.dart';
@@ -85,7 +86,7 @@ class _PageViewWidgetState extends State<PageViewWidget> {
   }
 }
 
-/// 这个是pageview中的界面
+/// 这个是pageView中的界面
 class PageListWidget extends StatefulWidget {
   const PageListWidget({Key? key, required this.data}) : super(key: key);
   final Data? data;
@@ -113,7 +114,7 @@ class _PageListWidgetState extends State<PageListWidget> {
   }
 
   void _handleTap(int index) {
-      RouteManager.jumpNewListDesPage(index);
+      RouteManager.jumpNewListDesPage( {"id" : widget.data?.newsLists[index].id ?? "", "timeAge" :widget.data?.newsLists[index].timeAgo ?? "" });
   }
 
   @override
@@ -127,14 +128,14 @@ class _PageListWidgetState extends State<PageListWidget> {
         onLoading: _onLoading,
         onRefresh: _onRefresh,
         child: ListView.separated(
-          cacheExtent: 110,
           itemCount: widget.data?.newsLists.length ?? 0,
             itemBuilder: (context, index) {
+            // Logger().d(widget.data?.newsLists.length);
               return ListTile(
                 onTap: () => _handleTap(index),
                   dense: true,
                   contentPadding: const EdgeInsets.all(0),
-                  title: MOListItem(newslist: widget.data?.newsLists[index]),
+                  title: ((widget.data?.newsLists.length ?? 0) <= index) ? Container() : MOListItem(newsList: widget.data?.newsLists[index]),
               );
             }, separatorBuilder: (BuildContext context, int index) {
             return Divider(indent: 15, color: Colors.grey[400],);
@@ -144,14 +145,13 @@ class _PageListWidgetState extends State<PageListWidget> {
   }
 }
 
-
 class MOListItem extends StatelessWidget {
-  const MOListItem({Key? key, required this.newslist}) : super(key: key);
-  final NewsLists? newslist;
+  const MOListItem({Key? key, required this.newsList}) : super(key: key);
+  final NewsLists? newsList;
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.all(15),
+        padding: const EdgeInsets.only(bottom: 5,top: 5,left: 15, right: 15),
       child: SizedBox(
         width: double.infinity,
         child: Row(
@@ -160,7 +160,7 @@ class MOListItem extends StatelessWidget {
               height: 80,
               child: AspectRatio(
                   aspectRatio: 400 / 263.0,
-                  child: Image(fit: BoxFit.fill, image: CachedNetworkImageProvider(newslist?.picList.first ?? "")),
+                  child: Image(fit: BoxFit.fill, image: CachedNetworkImageProvider(newsList?.picList.first ?? "")),
               ),
             ),
 
@@ -171,16 +171,16 @@ class MOListItem extends StatelessWidget {
                       alignment: Alignment.topLeft,
                       child: Padding(
                           padding: const EdgeInsets.only(left: 10,),
-                          child: SizedBox(width: double.infinity, child: Text(newslist?.title ?? "", style: const TextStyle(fontSize: 19), maxLines: 2, overflow: TextOverflow.ellipsis),)
+                          child: SizedBox(width: double.infinity, child: Text(newsList?.title ?? "", style: const TextStyle(fontSize: 19), maxLines: 2, overflow: TextOverflow.ellipsis),)
                       ),
                     ),
                     Align(
                       alignment: Alignment.bottomLeft,
-                      child: Padding(padding: const EdgeInsets.only(left: 10), child: Text(newslist?.timeAgo ?? "", style: const TextStyle(fontSize: 10),),),
+                      child: Padding(padding: const EdgeInsets.only(left: 10), child: Text(newsList?.timeAgo ?? "", style: const TextStyle(fontSize: 10),),),
                     ),
                     Align(
                       alignment: Alignment.bottomRight,
-                      child: Padding(padding: const EdgeInsets.only(left: 10), child: Text("${newslist?.commentNum ?? ""}评论", style: TextStyle(fontSize: 10, color: Colors.grey[500]))),
+                      child: Padding(padding: const EdgeInsets.only(left: 10), child: Text("${newsList?.commentNum ?? ""}评论", style: TextStyle(fontSize: 10, color: Colors.grey[500]))),
                     ),
                   ],
                 ),)
